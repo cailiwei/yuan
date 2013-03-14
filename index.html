@@ -1,0 +1,34 @@
+---
+layout: index
+---
+
+
+<article id="index">
+    <h2>近期文章</h2>
+    
+        {% for post in site.posts limit:4 %}
+			<div>
+				<p class="excerpt">	
+					
+					  <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}	</a>				
+					
+					  <span class="post-date" >
+						Posted on {{ post.date | date_to_string }}			 
+					  </span>	
+					
+				</p>
+				
+				<div class="excerpt-post">
+					{% if post.description %} 
+						 <p>{{ post.description }}</p>
+					{% else %}
+						<p>{{ post.content | strip_html | truncatewords: 2 }}</p>
+					{% endif %}
+				<p style="text-align:right"><span class="more"><a  href="{{site.baseurl}}{{ post.url }}">阅读全文...</a></span></p>
+				</div>
+			</div>
+        {% endfor %}
+  
+    <div class="pagination"><a href="{{ site.baseurl }}/archives">文章列表</a></div>
+</article>
+

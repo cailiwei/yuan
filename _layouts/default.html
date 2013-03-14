@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.meta.site_title }}</title>
+        <meta name="author" content="{{ site.meta.author.fullname }}" />
+        <link href="atom.xml" rel="alternate" title="Atom" type="application/atom+xml" />
+        <link href="rss.xml" rel="alternate" title="RSS" type="application/rss+xml" />
+		<link rel="shortcut icon" type=image/x-icon href="{{site.baseurl}}/favicon.ico">   
+		<!--[if lt IE 9]>
+			<script src="{{site.baseurl}}/js/html5.js" type="text/javascript"></script>	 
+        <![endif]--> 
+		{% for css in site.css %}<link rel="stylesheet" href="{{site.baseurl}}{{ css }}" type="text/css" />
+		{% endfor %}	
+		{% for css in page.css %}<link rel="stylesheet" href="{{site.baseurl}}{{ css }}" type="text/css" />
+		{% endfor %}
+		<script src="/js/scrolltop.js" type="text/javascript" charset="utf-8"></script>		
+		{% unless page.title %}
+			{% include redirect-url.html %}
+		{% endunless %}  
+			
+    </head>	
+
+	<body>	
+	{% include browser-warning.html %}
+	{% include browser.html %}		
+<!--返回顶部按钮-->
+<div id="goTopBtn" style="display:none" title="返回顶部"><a href="javascript:"><img style="border:none" class="topBtn" title="返回顶部" src="{{site.baseurl}}/images/go2top.png" alt="go2top"/></a></div>
+<script type="text/javascript">goTopEx();</script>
+<!--返回顶部按钮end-->
+
+        <section class="site">
+            <header>
+                <h1><a href="{{site.baseurl}}/">{{ site.meta.site_title }}</a></h1>
+                <h2>{{ site.meta.site_subtitle }}</h2>
+		    </header>			
+			<aside class="sidebar">
+				{% unless page.title %}
+					{% include about-me.html %} 
+				{% endunless %}				
+				{% if page.title %}
+					{% include recent.html %}
+				{% endif %}				
+				{% include tag-sidebar.html %}
+				{% include douban.html %}
+				{% include see-also.html %} 				                         
+            </aside> 			
+			{{ content }}    
+  			{% include footer.html %} 
+        </section>
+		{% for js in page.js %}<script src="{{site.baseurl}}{{ js }}" type="text/javascript" charset="utf-8"></script>
+		{% endfor %}
+		{% for js in site.js %}<script src="{{site.baseurl}}{{ js }}" type="text/javascript" charset="utf-8"></script>
+		{% endfor %}
+		{% include after-foot.html %}
+		{% include killie6.html %}		
+    </body>
+</html>

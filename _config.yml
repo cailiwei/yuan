@@ -1,0 +1,35 @@
+meta:
+    site_title: "念愿的博客"
+    site_subtitle: "学习，贵在坚持！"
+    site_language: "zh-cn"
+    absolute_baseurl: http://example.cailiwei.me
+    domain: cailiwei.me
+    author:
+        full_name: Cai Liwei
+        short_name: clw
+        name: 念愿
+        email: cailiwei712@163.com
+
+url: http://example.cailiwei.me
+
+# baseurl: /base
+
+markdown: kramdown
+
+# markdown: maruku
+# maruku:
+#   use_divs: true
+#    use_tex: true
+#    png_engine : blahtex
+#    png_dir    : images/latex/
+#    png_url    : /images/latex/
+
+pygments: false
+permalink: /blog/:year/:month/:day/:title
+
+disqus_short_name: clw.story
+
+      
+css:
+    - /css/screen.css
+
