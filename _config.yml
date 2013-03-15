@@ -2,15 +2,15 @@ meta:
     site_title: "念愿的博客"
     site_subtitle: "学习，贵在坚持！"
     site_language: "zh-cn"
-    absolute_baseurl: http://example.cailiwei.me
-    domain: cailiwei.me
+    absolute_baseurl: http://cailiwei.github.com/yuan/
+    domain: github.com
     author:
         full_name: Cai Liwei
-        short_name: clw
+        short_name: Levy
         name: 念愿
         email: cailiwei712@163.com
 
-url: http://example.cailiwei.me
+url: http://cailiwei.github.com/yuan/
 
 # baseurl: /base
 
