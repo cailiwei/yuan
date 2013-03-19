@@ -50,7 +50,7 @@ meta:
     site_subtitle: "学习，贵在坚持！"
     site_language: "zh-cn"
 #   absolute_baseurl: http://cailiwei.github.com/yuan/
-    absolute_baseurl: /
+    absolute_baseurl: /yuan
 #   domain: cailiwei.com.cn
     author:
         full_name: Cai Liwei
