@@ -84,4 +84,5 @@ include: ["/css", "/books", "/js", "/images", "/movies", "/tags", "/archives"]
 
 css:
     - /yuan/css/screen.css
-
+images:
+    - /yuan/images/
