@@ -51,6 +51,9 @@ meta:
     site_language: "zh-cn"
 #   absolute_baseurl: http://cailiwei.github.com/yuan/
     absolute_baseurl: /yuan
+    books_baseurl: /yuan/books
+    movies_baseurl: /yuan/movies
+
 #   domain: cailiwei.com.cn
     author:
         full_name: Cai Liwei
@@ -80,5 +83,5 @@ disqus_short_name: clw.story
 include: ["/css", "/books", "/js", "/images", "/movies", "/tags", "/archives"]
 
 css:
-    - /css/screen.css
+    - /yuan/css/screen.css
 
