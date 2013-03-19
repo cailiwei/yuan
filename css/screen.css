@@ -4,7 +4,7 @@ padding:0;
 }
 
 body {
-	background-color:#162e41;
+	background-color:#CAF17D;
 font:14px/1.75em georgia, serif;
 }
 
@@ -125,7 +125,7 @@ padding:1.5em 2em;
 }
 
 section.site > section.content nav.page-navigation {
-background-color:#162e41;
+background-color:#CAF17D;
 text-align: center;
 margin:1em 0;
 min-height:2em;
@@ -367,7 +367,7 @@ margin-bottom:.5em;
 }
 
 html {
-background-color:#162e41;
+background-color:#CAF17D;
 }
 
 html,body {
