@@ -49,8 +49,8 @@ meta:
     site_title: "念愿的博客"
     site_subtitle: "学习，贵在坚持！"
     site_language: "zh-cn"
-#   absolute_baseurl: http://cailiwei.github.com/yuan/
-    absolute_baseurl: /yuan
+    absolute_baseurl: http://www.cailiwei.com.cn/
+#   absolute_baseurl: /yuan
     books_baseurl: /yuan/books
     movies_baseurl: /yuan/movies
     images_baseurl: /yuan/images/
@@ -70,7 +70,7 @@ meta:
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-url: http://cailiwei.github.com/yuan/
+url: http://www.cailiwei.com.cn/
 
 #baseurl: /yuan
 
