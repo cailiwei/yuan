@@ -53,6 +53,7 @@ meta:
     absolute_baseurl: /yuan
     books_baseurl: /yuan/books
     movies_baseurl: /yuan/movies
+    images_baseurl: /yuan/images/
 
 #   domain: cailiwei.com.cn
     author:
@@ -84,5 +85,3 @@ include: ["/css", "/books", "/js", "/images", "/movies", "/tags", "/archives"]
 
 css:
     - /yuan/css/screen.css
-images:
-    - /yuan/images/
