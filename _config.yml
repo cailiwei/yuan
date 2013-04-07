@@ -37,4 +37,4 @@ disqus_short_name: clw.story
 include: ["/css", "/books", "/js", "/images", "/movies", "/tags", "/archives"]
 
 css:
-    - /css/style.css
+    - /yuan/css/style.css
