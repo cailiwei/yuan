@@ -8,33 +8,19 @@ meta:
     movies_baseurl: /movies
     images_baseurl: /images/
 
-#   domain: cailiwei.com.cn
     author:
         full_name: Cai Liwei
         short_name: Levy
         name: 念愿
         email: cailiwei712@163.com
 
-# The production_url/url is only used when full-domain names are needed
-# such as sitemap.txt 
-# Most places will/should use BASE_PATH to make the urls
-#
-# If you have set a CNAME (pages.github.com) set your custom domain here.
-# Else if you are pushing to username.github.com, replace with your username.
-# Finally if you are pushing to a GitHub project page, include the project name at the end.
-#
-# url: http://www.cailiwei.com.cn/
-
-baseurl: /
+url: http://blog.cailiwei.com.cn/
 
 markdown: kramdown
 
-pygments: true
 permalink: /blog/:year/:month/:day/:title
 
 disqus_short_name: clw.story
 
-include: ["/css", "/books", "/js", "/images", "/movies", "/tags", "/archives"]
-
 css:
-    - /yuan/css/style.css
+   - /yuan/css/style.css
