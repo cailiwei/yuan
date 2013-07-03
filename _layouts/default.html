@@ -66,17 +66,11 @@
 			
 			<aside id="sidebar">
 				<ul>
-					<li>
-					{% include someword.html %}
-					</li>
-
-					<li>
-					{% include resent.html %}
-					</li>
-
-					<li>
-					{% include tags.html %}
-					</li>
+					{% include desire.html %}
+					{% include tag-sidebar.html %}
+					{% include recent.html %}
+					{% include douban.html %}
+					{% include see-also.html %}
 				</ul>
 			</aside>
 			<!-- end #sidebar -->
@@ -85,9 +79,12 @@
 		</section>
 		<!-- end section #site -->
 
-		<div id="footer">
-			<p>CopyRight@&nbsp;2011&nbsp;v1.0 <a href="#" >念愿工作室</a>&nbsp;&nbsp;<a href="#">关于我</a></p>
-		</div>
-		<!-- end #footer -->
+		{% include footer.html %}
+
+		{% for js in page.js %}<script src="{{site.baseurl}}{{ js }}" type="text/javascript" charset="utf-8"></script>
+		{% endfor %}
+		{% for js in site.js %}<script src="{{site.baseurl}}{{ js }}" type="text/javascript" charset="utf-8"></script>
+		{% endfor %}
+		{% include after-foot.html %}
 	</body>
 </html>
