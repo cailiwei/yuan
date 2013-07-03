@@ -3,38 +3,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.site_title }}</title>
-		<meta name="keywords" content="" />
-		<meta name="description" content="" />
-		{% for css in site.css %}<link rel="stylesheet" type="text/css" href="{{site.baseurl}}{{ css }}" media="screen" />
-		{% endfor %}
-		{% for css in page.css %}<link rel="stylesheet" type="text/css" href="{{site.baseurl}}{{ css }}" media="screen" />
-		{% endfor %}
+		<title>念愿的博客</title>
+		<meta name="keywords" content="HTML,BLOG" />
+		<meta name="description" content="Levy'blog" />
 		<link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
 	</head>
 	<body>
 		<div id="logo">
-			<h1><a href="/nianyuan/index/index.jsp">心灵驿站 </a></h1>
-			<p><em><a href="http://home.51.com/?u=cailiwei712&_sid=113">念愿工作室</a>设计制作 </em></p>
+			<h1><a href="./">心灵驿站</a></h1>
+			<p><em><a href="http://www.cailiwei.com.cn">念愿工作室</a>设计制作</em></p>
 		</div>
-		<hr />
+		<hr /> <!--产生一条水平线-->
 		<!-- end #logo -->
 
 		<div id="header">
 			<div id="menu">
 				<ul>
-					<li><a href="/nianyuan/index/index.jsp" class="first">我的Blog</a></li>
-					<li class="current_page_item"><a href="/nianyuan/servlet/ListTalk">我的家园</a></li>
-					<li><a href="/nianyuan/index/add.jsp">我的简历</a></li>
-					<li><a href="/nianyuan/index/add.jsp">积分商品</a></li>
-					<li><a href="#">积分结账</a></li>
+					<li><a href="./blog/index.html" class="first">我的Blog</a></li>
+					<li class="current_page_item"><a href="http://www.cailiwei.com.cn">我的家园</a></li>
+					<li><a href="http://www.cailiwei.com.cn/#">我的简历</a></li>
+					<li><a href="#">文章收集</a></li>
+					<li><a href="#">问题总结</a></li>
 					<li><a href="/nianyuan/index/manager.jsp">后台管理</a></li>
 				</ul>
 			</div>
 			<!-- end #menu -->
 
 			<div id="search">
-				<form method="post" action="/nianyuan/index/servlet/List">
+				<form method="post" action="#">
 					<fieldset>
 						<input type="text" name="s" id="search-text" size="15" value="请入要查询内容" />
 						<input type="submit" id="search-submit" value="GO" />

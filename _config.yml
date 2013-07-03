@@ -8,10 +8,10 @@ movies_baseurl: /movies
 images_baseurl: /images/
 
 author:
-full_name: Cai Liwei
-short_name: Levy
-name: 念愿
-email: cailiwei712@163.com
+      full_name: Cai Liwei
+      short_name: Levy
+      name: 念愿
+      email: cailiwei712@163.com
 
 url: http://blog.cailiwei.com.cn/
 
