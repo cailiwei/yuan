@@ -59,12 +59,12 @@
 		<script type="text/javascript">goTopEx();</script>
 		<!--返回顶部按钮end-->
 
-		<section class="site">
+		<div id="page">
 			<div id="content">
 				{{ content }}
 			</div><!-- end #content -->
 			
-			<aside id="sidebar">
+			<div id="sidebar">
 				<ul>
 					{% include desire.html %}
 					{% include tag-sidebar.html %}
@@ -72,12 +72,12 @@
 					{% include douban.html %}
 					{% include see-also.html %}
 				</ul>
-			</aside>
+			</div>
 			<!-- end #sidebar -->
 
 			<div style="clear: both;">&nbsp;</div>
-		</section>
-		<!-- end section #site -->
+		</div>
+		<!-- end #page -->
 
 		{% include footer.html %}
 
