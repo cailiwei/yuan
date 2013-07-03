@@ -34,7 +34,7 @@
 					<li><a href="http://www.cailiwei.com.cn/#">我的简历</a></li>
 					<li><a href="#">文章收集</a></li>
 					<li><a href="#">问题总结</a></li>
-					<li><a href="/nianyuan/index/manager.jsp">后台管理</a></li>
+					<li><a href="http://www.cailiwei.com.cn">关于我</a></li>
 				</ul>
 			</div>
 			<!-- end #menu -->
@@ -51,13 +51,6 @@
 		</div>
 		<!-- end #header -->
 		<!-- end #header-wrapper -->
-
-		<!--返回顶部按钮-->
-		<div id="goTopBtn" style="display:none" title="返回顶部">
-			<a href="javascript:"><img style="border:none" class="topBtn" title="返回顶部" src="{{site.baseurl}}/images/go2top.png" alt="go2top"/></a>
-		</div>
-		<script type="text/javascript">goTopEx();</script>
-		<!--返回顶部按钮end-->
 
 		<div id="page">
 			<div id="content">
@@ -86,5 +79,13 @@
 		{% for js in site.js %}<script src="{{site.baseurl}}{{ js }}" type="text/javascript" charset="utf-8"></script>
 		{% endfor %}
 		{% include after-foot.html %}
+		
+		<!--返回顶部按钮-->
+		<div id="goTopBtn" style="display:none" title="返回顶部">
+			<a href="javascript:"><img style="border:none" class="topBtn" title="返回顶部" src="{{site.baseurl}}/images/go2top.png" alt="go2top"/></a>
+		</div>
+		<script type="text/javascript">goTopEx();</script>
+		<!--返回顶部按钮end-->
+
 	</body>
 </html>
