@@ -18,9 +18,16 @@ url: http://blog.cailiwei.com.cn/
 
 markdown: kramdown
 
+# how many items should be displayed per page.
+paginate: 5
+paginate_path: "blog/page:num"
+
 permalink: /blog/:year/:month/:day/:title
+# /blog/2009/04/29/slap-chop/index.html
+# permalink: /:month-:day-:year/:title.html 
+#            /04-29-2009/slap-chop.html
 
 disqus_short_name: clw.story
 
 css:
-   - /yuan/css/style.css
+   - /css/style.css
