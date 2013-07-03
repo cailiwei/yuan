@@ -3,18 +3,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.meta.site_title }}</title>
+		<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.site_title }}</title>
 		<meta name="keywords" content="" />
 		<meta name="description" content="" />
-{% for css in site.css %}
-		<link href="{{site.baseurl}}{{ css }}" rel="stylesheet" type="text/css" media="screen" />
-{% endfor %}	
+		{% for css in site.css %}<link rel="stylesheet" type="text/css" href="{{site.baseurl}}{{ css }}" media="screen" />
+		{% endfor %}
+		{% for css in page.css %}<link rel="stylesheet" type="text/css" href="{{site.baseurl}}{{ css }}" media="screen" />
+		{% endfor %}
+		<link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
 	</head>
 	<body>
 		<div id="logo">
 			<h1><a href="/nianyuan/index/index.jsp">心灵驿站 </a></h1>
 			<p><em><a href="http://home.51.com/?u=cailiwei712&_sid=113">念愿工作室</a>设计制作 </em></p>
-			<br />您好，&nbsp;&nbsp;<%=user %>&nbsp;先生/小姐，&nbsp;欢迎回来！&nbsp;&nbsp;<a href ="/nianyuan/logon.jsp">退出</a>
 		</div>
 		<hr />
 		<!-- end #logo -->

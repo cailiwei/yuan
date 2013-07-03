@@ -1,18 +1,17 @@
-meta:
-    site_title: "念愿的博客"
-    site_subtitle: "学习，贵在坚持！"
-    site_language: "zh-cn"
-#   absolute_baseurl: http://www.cailiwei.com.cn/
-    absolute_baseurl: /
-    books_baseurl: /books
-    movies_baseurl: /movies
-    images_baseurl: /images/
+site_title: "念愿的博客"
+site_subtitle: "学习，贵在坚持！"
+site_language: "zh-cn"
+#absolute_baseurl: http://www.cailiwei.com.cn/
+absolute_baseurl: /
+books_baseurl: /books
+movies_baseurl: /movies
+images_baseurl: /images/
 
-    author:
-        full_name: Cai Liwei
-        short_name: Levy
-        name: 念愿
-        email: cailiwei712@163.com
+author:
+full_name: Cai Liwei
+short_name: Levy
+name: 念愿
+email: cailiwei712@163.com
 
 url: http://blog.cailiwei.com.cn/
 
