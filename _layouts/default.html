@@ -56,7 +56,14 @@
 			<div id="content">
 				{{ content }}
 			</div><!-- end #content -->
-			
+
+			<!--返回顶部按钮-->
+			<div id="goTopBtn" style="display:none" title="返回顶部">
+				<a href="javascript:"><img style="border:none" class="topBtn" title="返回顶部" src="{{site.baseurl}}/images/go2top.png" alt="go2top"/></a>
+			</div>
+			<script type="text/javascript">goTopEx();</script>
+			<!--返回顶部按钮end-->
+
 			<div id="sidebar">
 				<ul>
 					{% include desire.html %}
@@ -80,12 +87,5 @@
 		{% endfor %}
 		{% include after-foot.html %}
 		
-		<!--返回顶部按钮-->
-		<div id="goTopBtn" style="display:none" title="返回顶部">
-			<a href="javascript:"><img style="border:none" class="topBtn" title="返回顶部" src="{{site.baseurl}}/images/go2top.png" alt="go2top"/></a>
-		</div>
-		<script type="text/javascript">goTopEx();</script>
-		<!--返回顶部按钮end-->
-
 	</body>
 </html>
