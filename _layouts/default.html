@@ -21,7 +21,7 @@
 	<body>
 		<div id="logo">
 			<h1><a href="./">心灵驿站</a></h1>
-			<p><em><a href="http://www.cailiwei.com.cn">念愿工作室</a>设计制作</em></p>
+			<p><em>成长已慢慢接近,~~~念愿`花心悦~天开阔~心地善~情意真</em></p>
 		</div>
 		<hr /> <!--产生一条水平线-->
 		<!-- end #logo -->
@@ -42,7 +42,7 @@
 			<div id="search">
 				<form method="post" action="#">
 					<fieldset>
-						<input type="text" name="s" id="search-text" size="15" value="请入要查询内容" />
+						<input type="text" name="s" id="search-text" size="15" value="请输入要查询内容" />
 						<input type="submit" id="search-submit" value="GO" />
 					</fieldset>
 				</form>
@@ -54,15 +54,17 @@
 
 		<div id="page">
 			<div id="content">
-				{{ content }}
-			</div><!-- end #content -->
 
-			<!--返回顶部按钮-->
-			<div id="goTopBtn" style="display:none" title="返回顶部">
-				<a href="javascript:"><img style="border:none" class="topBtn" title="返回顶部" src="{{site.baseurl}}/images/go2top.png" alt="go2top"/></a>
-			</div>
-			<script type="text/javascript">goTopEx();</script>
-			<!--返回顶部按钮end-->
+				{{ content }}
+
+				<!--返回顶部按钮-->
+				<div id="goTopBtn" style="display:none" title="返回顶部">
+					<a href="javascript:"><img style="border:none" class="topBtn" title="返回顶部" src="./images/go2top.png" alt="go2top"/></a>
+				</div>
+				<script type="text/javascript">goTopEx();</script>
+				<!--返回顶部按钮end-->
+
+			</div><!-- end #content -->
 
 			<div id="sidebar">
 				<ul>
