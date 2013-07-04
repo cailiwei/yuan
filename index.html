@@ -1,22 +1,20 @@
 ---
-layout: default
+layout: index
 ---
 
-<div id="content">
-	<div id="post">
-		{% for post in site.posts limit:4 %}
-		<h2 class="title"><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h2>
-		<p class="meta"><span class="post-date" >Posted on {{ post.date | date_to_long_string }}</span></p>
-		<div class="entry">
-			{% if post.description %} 
-			<p>{{ post.description }}</p>
-			{% else %}
-			<p>{{ post.content | strip_html | truncatewords: 2 }}</p>
-			{% endif %}
-			<p style="text-align:right"><span><a  href="{{site.baseurl}}{{ post.url }}" class="links">阅读全文...</a></span></p>
-		</div>
-		{% endfor %}
-
-		<div class="links"><a href="{{ site.baseurl }}/archives">更多文章</a></div>
+<div id="post">
+	{% for post in site.posts limit:4 %}
+	<h2 class="title"><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h2>
+	<p class="meta"><span class="post-date" >Posted on {{ post.date | date_to_long_string }}</span></p>
+	<div class="entry">
+		{% if post.description %} 
+		<p>{{ post.description }}</p>
+		{% else %}
+		<p>{{ post.content | strip_html | truncatewords: 2 }}</p>
+		{% endif %}
+		<p style="text-align:right"><span><a  href="{{site.baseurl}}{{ post.url }}" class="links">阅读全文...</a></span></p>
 	</div>
+	{% endfor %}
+
+	<div class="links"><a href="{{ site.baseurl }}/archives">更多文章</a></div>
 </div>
