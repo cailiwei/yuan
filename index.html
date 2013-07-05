@@ -15,8 +15,9 @@ layout: default
 			{% else %}
 			<p>{{ post.content | strip_html | truncatewords: 5 }}</p>
 			{% endif %}
-			<span><a href="{{site.baseurl}}{{ post.url }}" class="more">阅读全文...</a></span>
+			<p><span style="text-align:right"><a href="{{site.baseurl}}{{ post.url }}">阅读全文...</a></span></p>
 		</div>
+		<hr />
 		{% endfor %}
 
 		<div class="links">
