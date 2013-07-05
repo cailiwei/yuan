@@ -18,18 +18,16 @@ http代理设置
 
 ``
 vi /etc/environment
+export http_proxy=http://liwei.cai:CLW712mm@172.16.100.47:8080
+export ftp_proxy=ftp://liwei.cai:CLW712mm@172.16.100.47:8080
+export https_proxy=https://liwei.cai:CLW712mm@172.16.100.47:8080
 ``
-
-> export http_proxy=http://liwei.cai:CLW712mm@172.16.100.47:8080
-> export ftp_proxy=ftp://liwei.cai:CLW712mm@172.16.100.47:8080
-> export https_proxy=https://liwei.cai:CLW712mm@172.16.100.47:8080
 
 apt-get代理设置
 -----------
 ``
 vi /etc/apt/apt.conf
 ``
-
 > Acquire::http::proxy "http://liwei.cai:CLW712mm@172.16.100.47:8080/";
 > Acquire::ftp::proxy "ftp://liwei.cai:CLW712mm@172.16.100.47:8080/";
 > Acquire::https::proxy "https://liwei.cai:CLW712mm@172.16.100.47:8080/";
@@ -41,11 +39,11 @@ sudo apt-get install socat
 sudo vi /usr/bin/gitproxy
 ``
 
-> !/bin/bash
-> PROXY=172.16.100.47
-> PROXYPORT=8080
-> PROXYAUTH=liwei.cai:CLW712mm
-> exec socat STDIO PROXY:$PROXY:$1:$2,proxyport=$PROXYPORT,proxyauth=$PROXYAUTH
+\#!/bin/bash
+PROXY=172.16.100.47
+PROXYPORT=8080
+PROXYAUTH=liwei.cai:CLW712mm
+exec socat STDIO PROXY:$PROXY:$1:$2,proxyport=$PROXYPORT,proxyauth=$PROXYAUTH
 
 ``
 sudo  chmod +x /usr/bin/gitproxy
