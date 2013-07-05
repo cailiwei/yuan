@@ -21,7 +21,7 @@ layout: default
 		</div>
 
 		<div class="links">
-			<span><a href="{{site.baseurl}}/">返回主页</a></span>
+			<span><a href="{{site.baseurl}}">返回主页</a></span>
 		</div>
 	</div>
 
@@ -29,7 +29,7 @@ layout: default
 		{% if page.previous.url %}
 		<a style="text-align:left" href="{{ site.baseurl }}{{page.previous.url}}" title="前一篇：{{page.previous.title}}">&laquo; {{page.previous.title}}</a>
 		{% endif %}	
-		<a href="{{ site.baseurl }}/archives/">文章列表</a>
+		<a href="{{ site.baseurl }}/archives/"> &nbsp;&nbsp;&nbsp;&nbsp;文章列表&&nbsp;&nbsp;nbsp;&nbsp;</a>
 		{% if page.next.url %}
 		<a style="text-align:right" href="{{ site.baseurl }}{{page.next.url}}" title="后一篇：{{page.next.title}}">{{page.next.title}} &raquo;</a>
 		{% endif %}

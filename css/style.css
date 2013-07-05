@@ -257,6 +257,7 @@ hr { display: none; }
 .page-navigation {
 	background-color:#CAF17D;
 	margin:1em 0;
+	text-align: center;
 	min-height:2em;
 	padding:.25em;
 	position:relative;
@@ -355,23 +356,21 @@ hr { display: none; }
 	text-decoration: none;
 }
 
-/*
 .post .tag_cloud a:hover {
 	color:#333!important;
 	text-decoration: none;
 }
 
-.post .show-tag{
+.post .show-tag {
 	height: auto !important;_height:300px;
 	min-height:300px;_overflow: visible;
 }
 
-.post .show-tag span{
+.post .show-tag span {
 	font-weight: normal;
 	font-size:14px;
-	color:#808080
+	color: #808080;
 }
-*/
 
 /* comments */
 
