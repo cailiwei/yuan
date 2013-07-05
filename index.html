@@ -1,10 +1,8 @@
 ---
 layout: default
-title: 近期文章
 ---
 
 <div class="content">
-	<h2>{{ page.title }}</h2>
 	<div id="post">
 		{% for post in site.posts limit:4 %}
 		<h2 class="title"><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h2>

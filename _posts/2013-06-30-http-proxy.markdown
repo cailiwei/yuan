@@ -6,8 +6,6 @@ comment: true
 date: 2013-06-30
 ---
 
-网络代理设置方法总结
-=========
 下面是几种通过设置代理来取得网络的方法:
 
  - http代理设置
@@ -18,18 +16,19 @@ date: 2013-06-30
 http代理设置
 -----------
 
-```sh
+``
 vi /etc/environment
-```
+``
+
 > export http_proxy=http://liwei.cai:CLW712mm@172.16.100.47:8080
 > export ftp_proxy=ftp://liwei.cai:CLW712mm@172.16.100.47:8080
 > export https_proxy=https://liwei.cai:CLW712mm@172.16.100.47:8080
 
 apt-get代理设置
 -----------
-```sh
+``
 vi /etc/apt/apt.conf
-```
+``
 
 > Acquire::http::proxy "http://liwei.cai:CLW712mm@172.16.100.47:8080/";
 > Acquire::ftp::proxy "ftp://liwei.cai:CLW712mm@172.16.100.47:8080/";
@@ -37,10 +36,10 @@ vi /etc/apt/apt.conf
 
 git代理设置
 -----------
-```sh
+``
 sudo apt-get install socat
 sudo vi /usr/bin/gitproxy
-```
+``
 
 > !/bin/bash
 > PROXY=172.16.100.47
@@ -48,10 +47,10 @@ sudo vi /usr/bin/gitproxy
 > PROXYAUTH=liwei.cai:CLW712mm
 > exec socat STDIO PROXY:$PROXY:$1:$2,proxyport=$PROXYPORT,proxyauth=$PROXYAUTH
 
-```sh
+``
 sudo  chmod +x /usr/bin/gitproxy
 git config --global core.gitproxy gitproxy
-```
+``
 
 ssh代理设置
 -----------
