@@ -163,7 +163,7 @@ hr { display: none; }
 	padding: 3px 0 0 5px;
 	border: 1px solid #333333;
 	background: #ECF9E4;
-	color: #caf17d;
+	color: #0c1b68;
 }
 
 #search-submit {
@@ -196,31 +196,34 @@ hr { display: none; }
 	line-height: normal;
 	text-transform: lowercase;
 	font-weight: normal;
-	font-family: "华文行楷"
+	font-family: "华文行楷", "Times New Roman", Times, serif;
 	color: #618C04;
 }
 
 #logo p {
-	margin-top: -1px;
+	margin-top: 1px;
 	text-transform: lowercase;
 	font-size: 13px;
-	font-family: "华文行楷"
+	font-family: "华文行楷", "Times New Roman", Times, serif;
 	color: #A8A8A8;
 }
 
 #logo h1 {
 	padding-top: 10px;
 	font-size: 48px;
+	font: "华文行楷";
 }
 
 #logo a {
 	text-decoration: none;
 	color: #A8A8A8;
+	font: "华文行楷";
 }
 
 #logo h1 a {
 	text-decoration: none;
 	color: #618C04;
+	font: "华文行楷";
 }
 
 
@@ -266,7 +269,7 @@ hr { display: none; }
 
 .page-navigation  a {
 	border-bottom:1px dashed #666;
-	color:#FFFFFF;
+	color:#000000;
 	font:12px tahoma;
 	padding:.25em;
 }
