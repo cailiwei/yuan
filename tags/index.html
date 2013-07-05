@@ -4,7 +4,7 @@ layout: default
 ---
 <div class="content">
 	<div class="post">
-		<h2>所有分类标签：</h2>
+		<h2>所有标签：</h2>
 		<div id="tag_cloud">
 			{% for tag in site.tags %}<a href="javascript:;" onclick="showTag('{{ tag[0] }}')" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>&nbsp;{% endfor %}
 		</div>
