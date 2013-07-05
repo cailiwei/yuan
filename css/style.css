@@ -226,6 +226,23 @@ hr { display: none; }
 	padding-bottom: 20px;
 }
 
+#goTopBtn {
+	position: fixed; _position:absolute; _top:expression(document.documentElement.clientHeight + document.documentElement.scrollTop - this.offsetHeight); 
+	TEXT-ALIGN: center;
+	LINE-HEIGHT: 50px;
+	WIDTH: 50px;
+	HEIGHT: 50px;
+	FONT-SIZE: 12px;
+	CURSOR: pointer;
+	left: 52%;
+	bottom: 0;
+	margin-left: 480px;
+}
+
+#goTopBtn a{
+	border:none;
+}
+
 /* Content */
 
 #content {
@@ -278,11 +295,14 @@ hr { display: none; }
 }
 
 .post .date {
+	/*
 	margin-top: -8px;
 	margin-left: 2px;
 	padding: 0px 30px 2px 15px;
 	padding-left: 15px;
+	text-align: right;
 	color: gray;
+	*/
 }
 
 .post .meta {

@@ -5,15 +5,15 @@ layout: default
 <div class="content">
 	<div class="post">
 		<h2 class="title">{{ page.title }}</h2>
-		<p class="date" style="color:gray;" title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %d, %Y' }}</p>	
-		{% if page.tags != empty %}
 		<ul class="meta">
-			<li>标签：</li>
+			{% if page.tags != empty %}
+			<span>标签：</span>
 			{% for tag in page.tags %}
 			<li style="display:inline"><a href="{{ site.baseurl }}/tags/?tag={{tag | cgi}}">{{ tag }}</a>{% if forloop.last == false %}, {%endif %}</li>
 			{% endfor %}
+			{% endif %}
+			<li class="date" style="color:gray;display:inline;text-align: right;" title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %d, %Y' }}</li>	
 		</ul>
-		{% endif %}
 
 		<div class="entry">
 			{{ content }}	
@@ -31,8 +31,8 @@ layout: default
 				<a href="http://www.jiathis.com/share?uid=1558027" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 				<a class="jiathis_counter_style"></a>
 				
-				<span style="text-align:right">
-					<a href="{{site.baseurl}}/" class="links">返回主页</a>
+				<span class="more right" style="text-align:right">
+					<a href="{{site.baseurl}}/" style="text-align:right">返回主页</a>
 				</span>
 			</div>
 			<!-- JiaThis Button END -->	

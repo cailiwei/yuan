@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>念愿的博客</title>
+		<title>LEVY空间</title>
 		<meta name="keywords" content="" />
 		<meta name="description" content="" />
 		<meta name="author" content="{{ site.author.fullname }}" />
@@ -29,11 +29,11 @@
 		<div id="header">
 			<div id="menu">
 				<ul>
-					<li><a href="{{ site.baseurl }}/blog" class="first">我的Blog</a></li>
-					<li class="current_page_item"><a href="http://www.cailiwei.com.cn">我的家园</a></li>
+					<li><a href="{{ site.baseurl }}" class="first">我的主页</a></li>
+					<li class="current_page_item"><a href="{{ site.baseurl }}/archives">我的博客</a></li>
 					<li><a href="http://www.cailiwei.com.cn/#">我的简历</a></li>
-					<li><a href="#">文章收集</a></li>
-					<li><a href="#">问题总结</a></li>
+					<li><a href="{{ site.baseurl }}/article">文章收集</a></li>
+					<li><a href="{{ site.baseurl }}/feedback">问题总结</a></li>
 					<li><a href="http://www.cailiwei.com.cn">关于我</a></li>
 				</ul>
 			</div>
@@ -43,7 +43,7 @@
 					<fieldset>
 						<input type="hidden" name="cx" value="013327025781380964119:0ig1vkb9ffq">
 						<input type="hidden" name="ie" value="UTF-8">
-						<input type="text" name="s" id="search-text" size="15" value="请输入要查询内容"/>
+						<input type="text" name="s" id="search-text" size="15"/>
 						<input type="submit" id="search-submit" value="GO" />
 					</fieldset>
 				</form>
@@ -52,10 +52,8 @@
 			<!-- end #search -->
 		</div>
 		<!-- end #header -->
-		<!-- end #header-wrapper -->
 
 		<div id="page">
-
 			<div id="content">
 				{{ content }}
 
