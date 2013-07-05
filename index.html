@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="content">
-	<div id="post">
+	<div class="post">
 		{% for post in site.posts limit:4 %}
 		<h2 class="title"><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h2>
 		<p class="meta"><span class="post-date" >Posted on {{ post.date | date_to_long_string }}</span></p>
@@ -18,9 +18,7 @@ layout: default
 		{% endfor %}
 
 		<div class="links">
-			<span style="text-align:left">
-				<a href="{{ site.baseurl }}/archives">更多文章</a>
-			</span>
+			<span><a href="{{ site.baseurl }}/archives">更多文章</a></span>
 		</div>
 	</div>
 </div>
