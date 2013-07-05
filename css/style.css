@@ -77,9 +77,6 @@ hr { display: none; }
 
 /* Header */
 
-#header-wrapper {
-}
-
 #header {
 	width: 940px;
 	height: 36px;
@@ -201,9 +198,9 @@ hr { display: none; }
 }
 
 #logo p {
-	margin-top: 1px;
+	margin-top: 2px;
 	text-transform: lowercase;
-	font-size: 13px;
+	font-size: 14px;
 	font-family: "华文行楷", "Times New Roman", Times, serif;
 	color: #A8A8A8;
 }
@@ -259,7 +256,6 @@ hr { display: none; }
 
 .page-navigation {
 	background-color:#CAF17D;
-	text-align: center;
 	margin:1em 0;
 	min-height:2em;
 	padding:.25em;
@@ -272,11 +268,12 @@ hr { display: none; }
 	color:#000000;
 	font:12px tahoma;
 	padding:.25em;
+	text-decoration: none;
 }
 
 .page-navigation  a:hover {
 	border-bottom:1px dashed #BFEFFF;
-	color:#C0FF3E;
+	color: #ffffff; /* #C0FF3E; */
 	font:12px tahoma;
 	padding:.25em;
 }
@@ -326,7 +323,9 @@ hr { display: none; }
 	margin-top: -10px;
 }
 
-.post .meta a { }
+.post .meta a {
+	text-decoration: none;
+}
 
 .post .entry {
 	margin-bottom: 10px;
@@ -348,16 +347,18 @@ hr { display: none; }
 	color: #666666;
 }
 
-.post .bottom {
+.post .post-bottom {
 	height:30px;
 	margin-bottom:10px;
 	margin-top:10px;
 	padding:5px;
+	text-decoration: none;
 }
 
+/*
 .post .tag_cloud a:hover {
 	color:#333!important;
-	text-decoration:none;
+	text-decoration: none;
 }
 
 .post .show-tag{
@@ -365,30 +366,14 @@ hr { display: none; }
 	min-height:300px;_overflow: visible;
 }
 
-.psot .show-tag span{
+.post .show-tag span{
 	font-weight: normal;
 	font-size:14px;
 	color:#808080
 }
+*/
 
 /* comments */
-
-/*
-.comments {
-	display: block;
-	width: 120px;
-	height: 18px;
-	margin: 0px; 
-	padding: 3px 0px 0px 40px;
-	background: url(images/img07.gif) no-repeat left top;
-	text-decoration: none;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	text-decoration: none;
-	font-weight: bold;
-	color: #961A06;
-}
-*/
 
 .comments {
 	background-color:#f8f8f8;
@@ -415,6 +400,12 @@ hr { display: none; }
 #sidebar li {
 	margin-bottom: 30px;
 	padding: 0 0 10px 0px;
+}
+
+.sidebar .desire {
+	font-size: 14px;
+	font-family: "华文行楷", "Times New Roman", Times, serif;
+	color: #A8A8A8;
 }
 
 #sidebar li ul {
