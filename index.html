@@ -4,16 +4,24 @@ layout: default
 
 <div class="content">
 	<div class="post">
-		{% for post in site.posts limit:4 %}
+		{% for post in site.posts limit:5 %}
 		<h2 class="title"><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h2>
-		<p class="meta"><span class="post-date" >Posted on {{ post.date | date_to_long_string }}</span></p>
+		<ul class="meta">
+			{% if page.tags != empty %}
+			分类：
+			{% for tag in page.tags %}
+			<span style="display:inline"><a href="{{ site.baseurl }}/tags/?tag={{tag | cgi}}">{{ tag }}</a>{% if forloop.last == false %}, {%endif %}&nbsp;</span>
+			{% endfor %}
+			{% endif %}
+			<span class="date" >Posted on {{ post.date | date_to_long_string }}</span>
+		</ul>
 		<div class="entry">
 			{% if post.description %} 
 			<p>{{ post.description }}</p>
 			{% else %}
-			<p>{{ post.content | strip_html | truncatewords: 2 }}</p>
+			<p>{{ post.content | strip_html | truncatewords: 5 }}</p>
 			{% endif %}
-			<p style="text-align:right"><span><a  href="{{site.baseurl}}{{ post.url }}" class="links">阅读全文...</a></span></p>
+			<p style="text-align:right"><span><a href="{{site.baseurl}}{{ post.url }}" class="more">阅读全文...</a></span></p>
 		</div>
 		{% endfor %}
 

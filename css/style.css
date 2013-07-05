@@ -298,14 +298,12 @@ hr { display: none; }
 }
 
 .post .date {
-	/*
 	margin-top: -8px;
 	margin-left: 2px;
 	padding: 0px 30px 2px 15px;
 	padding-left: 15px;
 	text-align: right;
 	color: gray;
-	*/
 }
 
 .post .meta {
@@ -340,6 +338,21 @@ hr { display: none; }
 	margin: 0px 0px 0px 0px; 
 	padding: 4px 0px 0px 40px;
 	background: url(images/img03.gif) no-repeat left top;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #666666;
+}
+
+.post .more{
+	display: block;
+	width: 120px;
+	height: 20px;
+	margin: 0px 0px 0px 0px; 
+	padding: 4px 0px 0px 40px;
+	background: url(images/img03.gif) no-repeat right top;
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
