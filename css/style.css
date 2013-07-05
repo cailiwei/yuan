@@ -356,17 +356,19 @@ hr { display: none; }
 	text-decoration: none;
 }
 
-.post .tag_cloud a:hover {
+/* tags */
+
+#tag_cloud a:hover {
 	color:#333!important;
 	text-decoration: none;
 }
 
-.post .show-tag {
+#show-tag {
 	height: auto !important;_height:300px;
 	min-height:300px;_overflow: visible;
 }
 
-.post .show-tag span {
+#show-tag span {
 	font-weight: normal;
 	font-size:14px;
 	color: #808080;
