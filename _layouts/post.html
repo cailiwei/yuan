@@ -7,12 +7,11 @@ layout: default
 		<h2 class="title">{{ page.title }}</h2>
 		<ul class="meta">
 			{% if page.tags != empty %}
-			<span>标签：</span>
 			{% for tag in page.tags %}
 			<span style="display:inline"><a href="{{ site.baseurl }}/tags/?tag={{tag | cgi}}">{{ tag }}</a>{% if forloop.last == false %}, {%endif %}</span>
 			{% endfor %}
 			{% endif %}
-			<span class="date" style="color:gray;display:inline;text-align: right;" title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %d, %Y' }}</span>
+			<span style="color:gray; display:inline; text-align: right;" title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %d, %Y' }}</span>
 		</ul>
 
 		<div class="entry">
@@ -22,7 +21,11 @@ layout: default
 		<div class="bottom">
 			<!-- JiaThis Button BEGIN -->
 			<div id="ckepop">
-				<span class="jiathis_txt">分享到：</span>
+				<span class="more left">
+					<a href="{{site.baseurl}}/">返回主页</a>
+				</span>
+
+				<span class="jiathis_txt" style="text-align:right">分享到：</span>
 				<a class="jiathis_button_qzone"></a>
 				<a class="jiathis_button_tsina"></a>
 				<a class="jiathis_button_tqq"></a>
@@ -30,10 +33,6 @@ layout: default
 				<a class="jiathis_button_kaixin001"></a>
 				<a href="http://www.jiathis.com/share?uid=1558027" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 				<a class="jiathis_counter_style"></a>
-				
-				<span class="more right" style="text-align:right">
-					<a href="{{site.baseurl}}/" style="text-align:right">返回主页</a>
-				</span>
 			</div>
 			<!-- JiaThis Button END -->	
 		</div>	
