@@ -266,6 +266,7 @@ hr { display: none; }
 
 .post .title {
 	height: 44px;
+	text-align: left;
 	padding-left: 15px;
 }
 
@@ -277,6 +278,11 @@ hr { display: none; }
 }
 
 .post .date {
+	margin-top: -8px;
+	margin-left: 2px;
+	padding: 0px 30px 2px 15px;
+	padding-left: 15px;
+	color: gray;
 }
 
 .post .meta {
