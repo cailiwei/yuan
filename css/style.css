@@ -163,7 +163,7 @@ hr { display: none; }
 	padding: 3px 0 0 5px;
 	border: 1px solid #333333;
 	background: #ECF9E4;
-	color: #000000;
+	color: #caf17d;
 }
 
 #search-submit {
@@ -201,7 +201,7 @@ hr { display: none; }
 }
 
 #logo p {
-	margin-top: -4px;
+	margin-top: -1px;
 	text-transform: lowercase;
 	font-size: 13px;
 	font-family: "华文行楷"
@@ -211,7 +211,6 @@ hr { display: none; }
 #logo h1 {
 	padding-top: 10px;
 	font-size: 48px;
-	font-family: "华文行楷"
 }
 
 #logo a {
