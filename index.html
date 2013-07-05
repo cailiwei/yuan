@@ -5,7 +5,7 @@ layout: default
 <div class="content">
 	<div class="post">
 		{% for post in site.posts limit:5 %}
-		<h2 class="title"><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h2>
+		<h3 class="title"><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h3>
 		<ul class="meta">
 			<span class="date"> Posted on {{ post.date | date_to_long_string }}</span>
 		</ul>
@@ -13,9 +13,9 @@ layout: default
 			{% if post.description %} 
 			<p>{{ post.description }}</p>
 			{% else %}
-			<p>{{ post.content | strip_html | truncatewords: 5 }}</p>
+			<p>{{ post.content | strip_html | truncatewords: 4 }}</p>
 			{% endif %}
-			<p><span style="text-align:right"><a href="{{site.baseurl}}{{ post.url }}">阅读全文...</a></span></p>
+			<p style="text-align:right"><span><a href="{{site.baseurl}}{{ post.url }}">阅读全文...</a></span></p>
 		</div>
 		<hr />
 		{% endfor %}
