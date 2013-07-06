@@ -13,21 +13,21 @@ date: 2013-06-30
  - git代理设置
  - ssh代理设置
  
-# http代理设置
+### http代理设置
 
     vi /etc/environment
     export http_proxy=http://liwei.cai:CLW712mm@172.16.100.47:8080
     export ftp_proxy=ftp://liwei.cai:CLW712mm@172.16.100.47:8080
     export https_proxy=https://liwei.cai:CLW712mm@172.16.100.47:8080
 
-# apt-get代理设置
+### apt-get代理设置
 
     vi /etc/apt/apt.conf
     Acquire::http::proxy "http://liwei.cai:CLW712mm@172.16.100.47:8080/";
     Acquire::ftp::proxy "ftp://liwei.cai:CLW712mm@172.16.100.47:8080/";
     Acquire::https::proxy "https://liwei.cai:CLW712mm@172.16.100.47:8080/";
     
-# git代理设置
+### git代理设置
 
     sudo apt-get install socat
     sudo vi /usr/bin/gitproxy
@@ -41,7 +41,7 @@ date: 2013-06-30
     sudo  chmod +x /usr/bin/gitproxy
     git config --global core.gitproxy gitproxy
     
-# ssh代理设置
+### ssh代理设置
 
 https://help.github.com/articles/error-permission-denied-publickey
 http://stackoverflow.com/questions/15577300/connecting-to-host-by-ssh-client-in-linux-by-proxy
