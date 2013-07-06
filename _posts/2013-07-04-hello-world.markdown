@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [技术, test]
+tags: [技术]
 title: 你好,世界
 ---
 
