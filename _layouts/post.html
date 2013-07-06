@@ -29,11 +29,17 @@ layout: default
 		{% if page.previous.url %}
 		<a style="text-align:left" href="{{ site.baseurl }}{{page.previous.url}}" title="前一篇：{{page.previous.title}}">&laquo; {{page.previous.title}}</a>
 		{% endif %}	
-		<a href="{{ site.baseurl }}/archives/"> &nbsp;&nbsp;&nbsp;&nbsp;文章列表&&nbsp;&nbsp;nbsp;&nbsp;</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="{{ site.baseurl }}/archives/"> 文章列表</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		{% if page.next.url %}
 		<a style="text-align:right" href="{{ site.baseurl }}{{page.next.url}}" title="后一篇：{{page.next.title}}">{{page.next.title}} &raquo;</a>
 		{% endif %}
 	</div>
+
+	<!-- JiaThis Button BEGIN -->
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?uid=1370227008046688&btn=r1.gif" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
 
 	{% if page.comment %}
 	<div class="comments" id="comments">
@@ -54,7 +60,4 @@ layout: default
     </div>
     {% endif %}
 
-	<!-- JiaThis Button BEGIN -->
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?uid=1370227008046688&btn=r1.gif" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
 </div>
