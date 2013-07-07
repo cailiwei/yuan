@@ -43,5 +43,5 @@ date: 2013-06-30
     
 ### ssh代理设置
 
-https://help.github.com/articles/error-permission-denied-publickey
-http://stackoverflow.com/questions/15577300/connecting-to-host-by-ssh-client-in-linux-by-proxy
+[https://help.github.com/articles/error-permission-denied-publickey](https://help.github.com/articles/error-permission-denied-publickey)
+[http://stackoverflow.com/questions/15577300/connecting-to-host-by-ssh-client-in-linux-by-proxy](http://stackoverflow.com/questions/15577300/connecting-to-host-by-ssh-client-in-linux-by-proxy)
