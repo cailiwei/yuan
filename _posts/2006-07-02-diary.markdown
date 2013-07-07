@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [散文,青春]
+tags: [散文, 青春, 日记]
 comment: true
 title: 2006-07-02的日记
 ---
@@ -21,6 +21,7 @@ title: 2006-07-02的日记
 
 最深沉的表达~~~~~~~~~~~~~~~~~
 
-<p>{{ page.date | date_to_long_string }}</p>
+<p>{{ page.date | date\_to\_long\_string }}</p>
 
-转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10000126.html)
+转自于: [我的51空间](http://home.51.com/cailiwei712/diary/item/10000126.html)
+
