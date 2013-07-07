@@ -1,0 +1,18 @@
+---
+layout: post
+tags: [散文, 青春, 日记]
+comment: true
+title: 2006-08-23的日记
+---
+
+今天我们进行的高二期末考试,
+
+终于结束了;
+
+但是这并没给带来一点儿轻松,
+
+反而却又增添了一点而的忧郁.
+
+<p>{{ page.date | date_to_long_string }}</p>
+
+转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10000817.html)

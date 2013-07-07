@@ -1,0 +1,24 @@
+---
+layout: post
+tags: [散文, 青春, 日记]
+comment: true
+title: 晕
+---
+
+渐渐的，习惯了，
+
+痛苦好象家常，
+
+就是这样一个人，
+
+走过太多，却伤得越深，
+
+我痛苦，我也无助，可有什么办法，
+
+可能别人都会认为真是“少年不知愁滋味，故作矜持强说愁”，
+
+难道我是那样吗？
+
+<p>{{ page.date | date_to_long_string }}</p>
+
+转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10023528.html)

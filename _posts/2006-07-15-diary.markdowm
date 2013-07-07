@@ -1,0 +1,14 @@
+---
+layout: post
+tags: [散文, 青春, 日记]
+comment: true
+title: 2006-07-15的日记
+---
+
+身后的城市是一座幕起又幕落的舞台，最出色的演员不在舞台上，而在生活中。
+
+这不知是人生的幸事还是艺术的悲哀？
+
+<p>{{ page.date | date_to_long_string }}</p>
+
+转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10000129.html)

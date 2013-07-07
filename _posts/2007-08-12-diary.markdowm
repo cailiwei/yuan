@@ -1,0 +1,12 @@
+---
+layout: post
+tags: [散文, 青春, 日记]
+comment: true
+title: 复度 
+---
+
+又一年地狱般的生活！哎, 该忘了些什么才好哟！
+
+<p>{{ page.date | date_to_long_string }}</p>
+
+转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10013860.html)
