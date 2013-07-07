@@ -1,6 +1,7 @@
 ---
 layout: post
 tags: [技术]
+comment: true
 title: Levy's Station 全新上线
 ---
 
