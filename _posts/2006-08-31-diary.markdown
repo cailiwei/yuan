@@ -15,6 +15,5 @@ title: 2006-08-31的日记
 
 明天会是怎样自己去想
 
-<p>{{ page.date | date_to_long_string }}</p>
 
 转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10000961.html)

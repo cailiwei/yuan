@@ -23,6 +23,5 @@ title: 时间不多了
 
 我要做世界上最快乐，最幸福的自己！
 
-<p>{{ page.date | date_to_long_string }}</p>
 
 转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10029573.html)

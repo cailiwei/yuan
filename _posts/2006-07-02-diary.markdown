@@ -21,7 +21,6 @@ title: 2006-07-02的日记
 
 最深沉的表达~~~~~~~~~~~~~~~~~
 
-<p>{{ page.date | date_to_long_string }}</p>
 
 转自于: [我的51空间](http://home.51.com/cailiwei712/diary/item/10000126.html)
 

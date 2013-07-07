@@ -9,6 +9,5 @@ title: 2006-07-15的日记
 
 这不知是人生的幸事还是艺术的悲哀？
 
-<p>{{ page.date | date_to_long_string }}</p>
 
 转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10000129.html)

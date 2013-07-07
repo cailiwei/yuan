@@ -13,6 +13,5 @@ title: 2006-08-23的日记
 
 反而却又增添了一点而的忧郁.
 
-<p>{{ page.date | date_to_long_string }}</p>
 
 转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10000817.html)

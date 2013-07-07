@@ -11,6 +11,5 @@ title: 傻气
 
 我才不管 我就是……我就是笨咯，没的勇气！
 
-<p>{{ page.date | date_to_long_string }}</p>
 
 转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10034312.html)

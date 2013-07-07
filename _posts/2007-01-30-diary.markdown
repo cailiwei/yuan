@@ -29,6 +29,5 @@ title: 2007-01-30的日记
 
 我既然已经选择了就不应该后悔!
 
-<p>{{ page.date | date_to_long_string }}</p>
 
 转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10005625.html)
