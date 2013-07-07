@@ -1,8 +1,8 @@
 ---
 layout: post
-tags: [散文, 青春, 日记]
+tags: [青春, 日记]
 comment: true
-title: 2006-08-31的日记
+title: 花的主题
 ---
 
 花的艳是因为花心悦
@@ -13,7 +13,7 @@ title: 2006-08-31的日记
 
 情想思是因为情意真
 
-明天会是怎样自己去想
+明天自己会是怎样, 去想~~
 
 
 转自于[我的51空间](http://home.51.com/cailiwei712/diary/item/10000961.html)

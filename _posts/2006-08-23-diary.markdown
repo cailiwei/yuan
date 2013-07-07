@@ -1,8 +1,8 @@
 ---
 layout: post
-tags: [散文, 青春, 日记]
+tags: [青春, 日记]
 comment: true
-title: 2006-08-23的日记
+title: 一次期末考试
 ---
 
 今天我们进行的高二期末考试,

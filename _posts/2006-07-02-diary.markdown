@@ -1,8 +1,8 @@
 ---
 layout: post
-tags: [散文, 青春, 日记]
+tags: [青春, 日记]
 comment: true
-title: 2006-07-02的日记
+title: 暗恋
 ---
 
 我很爱你

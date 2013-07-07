@@ -1,8 +1,8 @@
 ---
 layout: post
-tags: [散文, 青春, 日记]
+tags: [青春, 日记]
 comment: true
-title: 2006-07-23的日记
+title: 网之恋
 ---
 
 让一曲郭摩若的《再别康桥》来结束自己对网络游戏的迷恋吧！ 

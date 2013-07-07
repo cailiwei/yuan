@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [散文, 青春, 日记]
+tags: [散文, 青春, 日记, 大学]
 comment: true
 title: 时至今日
 ---

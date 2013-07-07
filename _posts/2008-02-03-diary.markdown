@@ -2,7 +2,7 @@
 layout: post
 tags: [散文, 青春, 日记]
 comment: true
-title: 晕
+title: 说愁
 ---
 
 渐渐的，习惯了，

@@ -1,8 +1,8 @@
 ---
 layout: post
-tags: [散文, 青春, 日记]
+tags: [青春, 日记]
 comment: true
-title: 傻气
+title: 那时的退缩,那是害羞
 ---
 
 有时候有的事真的很难说清楚，特别又是感情
