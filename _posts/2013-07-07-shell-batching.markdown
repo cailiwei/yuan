@@ -2,7 +2,7 @@
 layout: post
 tags: [技术, linux, shell]
 comment: true
-title: shell中批量重命名和批量添加和删除文本的某一行
+title: 一句话命令批量处理文本
 ---
 
 ###Linux Shell 批量重命名的方法
@@ -68,11 +68,11 @@ echo "5";
 比如：在1.txt里有以下内容：
 
 ``
-HELLO=1
-NI=2
-WORLD=3
-I Love China.
-Love all
+HELLO=1  
+NI=2  
+WORLD=3  
+I Love China.  
+Love all  
 ....
 ``
 
