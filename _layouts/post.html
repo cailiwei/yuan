@@ -12,7 +12,7 @@ layout: default
 			<span style="display:inline"><a href="{{ site.baseurl }}/tags/?tag={{tag | cgi}}">{{ tag }}</a>{% if forloop.last == false %}, {%endif %}&nbsp;</span>
 			{% endfor %}
 			{% endif %}
-			<span style="color:gray; display:inline; text-align: right;" title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}"> 
+			<span style="display:inline;" title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}"> 
 				&nbsp;&nbsp;时间：{{ page.date | date: '%B %d, %Y' }}</span>
 		</ul>
 

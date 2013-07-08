@@ -283,7 +283,7 @@ hr { display: none; }
 
 /* Post */
 .post {
-	margin-bottom: 45px;
+	margin-bottom: 30px;
 }
 
 .post .title {
@@ -348,6 +348,10 @@ hr { display: none; }
 	color: #666666;
 }
 
+.post .links a{
+	text-decoration: none;
+}
+
 .post .post-bottom {
 	height:30px;
 	margin-bottom:10px;
@@ -356,10 +360,14 @@ hr { display: none; }
 	text-decoration: none;
 }
 
-/* entry */
+/* entry ---- >  posted blog was insided here */
+
 #entry {
 	margin-bottom: 10px;
 	padding: 10px 15px 10px 15px;
+	background-color:#ffebe2;
+	color:#ffebe2;
+	border:1px solid #ffebe2;
 }
 
 
