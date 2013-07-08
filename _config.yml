@@ -22,10 +22,14 @@ markdown: kramdown
 paginate: 5
 paginate_path: "blog/page:num"
 
+# 博客输出url格式
 permalink: /blog/:year/:month/:day/:title
 # /blog/2009/04/29/slap-chop/index.html
 # permalink: /:month-:day-:year/:title.html 
 #            /04-29-2009/slap-chop.html
+
+# 代码高亮设置
+pygments:    true
 
 disqus_short_name: clw.story
 
