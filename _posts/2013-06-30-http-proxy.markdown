@@ -20,7 +20,7 @@ date: 2013-06-30
     export http_proxy=http://liwei.cai:CLW712mm@172.16.100.47:8080
     export ftp_proxy=ftp://liwei.cai:CLW712mm@172.16.100.47:8080
     export https_proxy=https://liwei.cai:CLW712mm@172.16.100.47:8080
-    {% endgihlight %}
+    {% endhighlight %}
 
 ### apt-get代理设置
 
@@ -29,7 +29,7 @@ date: 2013-06-30
     Acquire::http::proxy "http://liwei.cai:CLW712mm@172.16.100.47:8080/";
     Acquire::ftp::proxy "ftp://liwei.cai:CLW712mm@172.16.100.47:8080/";
     Acquire::https::proxy "https://liwei.cai:CLW712mm@172.16.100.47:8080/";
-    {% endgihlight %}
+    {% endhighlight %}
     
 ### git代理设置
 
@@ -45,7 +45,7 @@ date: 2013-06-30
     
     sudo  chmod +x /usr/bin/gitproxy
     git config --global core.gitproxy gitproxy
-{% endgihlight %}
+{% endhighlight %}
     
 ### ssh代理设置
 
