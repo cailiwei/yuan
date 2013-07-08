@@ -75,6 +75,50 @@ hr { display: none; }
 #wrapper {
 }
 
+/** LOGO */
+
+#logo {
+	width: 940px;
+	height: 115px;
+	margin: 0 auto;
+}
+
+#logo h1, #logo p {
+	margin: 0px;
+	line-height: normal;
+	text-transform: lowercase;
+	font-weight: normal;
+	font-family: "华文行楷", "Times New Roman", Times, serif;
+	color: #618C04;
+}
+
+#logo p {
+	margin-top: 2px;
+	text-transform: lowercase;
+	font-size: 14px;
+	font-family: "华文行楷", "Times New Roman", Times, serif;
+	color: #A8A8A8;
+}
+
+#logo h1 {
+	padding-top: 10px;
+	font-size: 48px;
+	font: "华文行楷";
+}
+
+#logo a {
+	text-decoration: none;
+	color: #A8A8A8;
+	font: "华文行楷";
+}
+
+#logo h1 a {
+	text-decoration: none;
+	color: #618C04;
+	font: "华文行楷";
+}
+/* ------------------ logo end ----------------- */
+
 /* Header */
 
 #header {
@@ -129,6 +173,7 @@ hr { display: none; }
 
 #menu .first {
 }
+
 /* Search */
 
 #search {
@@ -179,54 +224,11 @@ hr { display: none; }
 	padding: 70px 0px 0px 0px;
 }
 
-
-/** LOGO */
-
-#logo {
-	width: 940px;
-	height: 115px;
-	margin: 0 auto;
-}
-
-#logo h1, #logo p {
-	margin: 0px;
-	line-height: normal;
-	text-transform: lowercase;
-	font-weight: normal;
-	font-family: "华文行楷", "Times New Roman", Times, serif;
-	color: #618C04;
-}
-
-#logo p {
-	margin-top: 2px;
-	text-transform: lowercase;
-	font-size: 14px;
-	font-family: "华文行楷", "Times New Roman", Times, serif;
-	color: #A8A8A8;
-}
-
-#logo h1 {
-	padding-top: 10px;
-	font-size: 48px;
-	font: "华文行楷";
-}
-
-#logo a {
-	text-decoration: none;
-	color: #A8A8A8;
-	font: "华文行楷";
-}
-
-#logo h1 a {
-	text-decoration: none;
-	color: #618C04;
-	font: "华文行楷";
-}
-
-
+/* 这里可以预留以后作为滚动横幅
 #banner {
 	padding-bottom: 20px;
 }
+*/
 
 #goTopBtn {
 	position: fixed; _position:absolute; _top:expression(document.documentElement.clientHeight + document.documentElement.scrollTop - this.offsetHeight); 
@@ -274,7 +276,7 @@ hr { display: none; }
 
 .page-navigation  a:hover {
 	border-bottom:1px dashed #BFEFFF;
-	color: #ffffff; /* #C0FF3E; */
+	color: #ffffff; /* #de82de; */
 	font:12px tahoma;
 	padding:.25em;
 }
