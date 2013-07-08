@@ -15,7 +15,7 @@ date: 2013-06-30
  
 ### http代理设置
 
-{% highlight shell linenos %}	
+{% highlight bash linenos %}	
     vi /etc/environment
     export http_proxy=http://liwei.cai:CLW712mm@172.16.100.47:8080
     export ftp_proxy=ftp://liwei.cai:CLW712mm@172.16.100.47:8080
@@ -24,7 +24,7 @@ date: 2013-06-30
 
 ### apt-get代理设置
 
-{% highlight shell linenos %}
+{% highlight bash linenos %}
     vi /etc/apt/apt.conf
     Acquire::http::proxy "http://liwei.cai:CLW712mm@172.16.100.47:8080/";
     Acquire::ftp::proxy "ftp://liwei.cai:CLW712mm@172.16.100.47:8080/";
@@ -33,7 +33,7 @@ date: 2013-06-30
     
 ### git代理设置
 
-{% highlight shell linenos %}	
+{% highlight bash linenos %}	
     sudo apt-get install socat
     sudo vi /usr/bin/gitproxy
     
