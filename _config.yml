@@ -22,6 +22,8 @@ markdown: kramdown
 paginate: 5
 paginate_path: "blog/page:num"
 
+# < ----------- add by liwei.cai ------------------ >
+
 # 博客输出url格式
 permalink: /blog/:year/:month/:day/:title
 # /blog/2009/04/29/slap-chop/index.html
@@ -29,7 +31,13 @@ permalink: /blog/:year/:month/:day/:title
 #            /04-29-2009/slap-chop.html
 
 # 代码高亮设置
-pygments:    true
+pygments: true
+
+# 保持Jekyll运行，查看你的项目目录的改变并随时生成网站
+# auto: true
+
+# jekyll 忽略被包含的文件和目录
+# exclude: "temp"
 
 disqus_short_name: clw.story
 
