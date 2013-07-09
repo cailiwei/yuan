@@ -7,9 +7,9 @@ Released for free under a Creative Commons Attribution 2.5 License
 body {
 	margin: 0;
 	padding: 0;
-	background: #FEFFEE url(images/img01.gif) repeat-x left top;
+	background: #FFFFFF url(images/img01.gif) repeat-x left top;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 13px;
 	color: #8A8A8A;
 }
 
@@ -365,9 +365,9 @@ hr { display: none; }
 #entry {
 	margin-bottom: 10px;
 	padding: 10px 15px 10px 15px;
-	background-color:#ffebe2;
+	background-color:#ffebe2; /* 老婆说，男孩子不要那么喜欢粉色 */
 	color:#000000;
-	border:1px solid #909090;/* background:#fff; */ color:#333;
+	border:1px solid #909090; background:#fff; color:#333;
 	filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);
 	-moz-box-shadow: 2px 2px 10px #909090;
 	-webkit-box-shadow: 2px 2px 10px #909090;
