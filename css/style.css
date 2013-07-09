@@ -421,8 +421,9 @@ hr { display: none; }
 }
 
 #sidebar li {
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 	padding: 0 0 10px 0px;
+	list-style: none;
 }
 
 #desire {
