@@ -299,7 +299,6 @@ hr { display: none; }
 	color: #618C04;
 }
 
-/* not used */
 .post .date {
 	margin-top: -10px;
 	margin-left: 2px;
@@ -429,7 +428,7 @@ hr { display: none; }
 #desire {
 	font-family: "华文行楷", Arial, serif;
 	color:#FFFFFF;
-	font-size: 14px;
+	font-size: 16px;
 	text-shadow:#339900 0px 1px 3px,#339900 1px 0px 3px,#339900 0px -1px 3px,#339900 -1px 0px 3px;
 	filter:glow(color=#339900,strength=3)
 }

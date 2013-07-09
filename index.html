@@ -4,8 +4,8 @@ layout: default
 
 <div class="content">
 	<div class="post">
-		{% for post in site.posts limit:5 %}
-		<h3 class="title"><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h3>
+		{% for post in site.posts limit:10 %}
+		<div class="title"><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></div>
 		<ul class="meta">
 			<span class="date"> Posted on {{ post.date | date_to_long_string }}</span>
 		</ul>
