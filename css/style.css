@@ -463,7 +463,7 @@ hr { display: none; }
 	height: 30px;
 	margin: 0 0 10px 0px;
 	padding: 6px 0 2px 14px;
-	background: url(images/img05.gif) repeat-x left top;
+	background: url(images/img05.gif) no-repeat left top;
 	text-transform: capitalize;
 	font-size: 18px;
 	font-weight: normal;
