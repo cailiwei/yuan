@@ -1,17 +1,9 @@
-site_title: "念愿的博客"
-site_subtitle: "学习，贵在坚持！"
+site_title: "Levy's Station"
+site_subtitle: "自由分享,提高认知！"
 site_language: "zh-cn"
-#absolute_baseurl: http://www.cailiwei.com.cn/
-absolute_baseurl: /
-books_baseurl: /books
-movies_baseurl: /movies
-images_baseurl: /images/
 
-author:
-      full_name: Cai Liwei
-      short_name: Levy
-      name: 念愿
-      email: cailiwei712@163.com
+author: "蔡立维(Levy)"
+email: cailiwei712@163.com
 
 url: http://blog.cailiwei.com.cn
 baseurl: http://blog.cailiwei.com.cn
@@ -39,7 +31,7 @@ pygments: true
 # jekyll 忽略被包含的文件和目录
 # exclude: "temp"
 
-disqus_short_name: clw.story
+disqus_short_name: levycai
 
 css:
    - /css/style.css

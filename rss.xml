@@ -5,9 +5,9 @@ layout: nil
 <rss version="2.0">
     <channel>
         <title>{{ site.site_title }}</title>
-        <link>{{ site.absolute_baseurl }}</link>
+        <link>{{ site.baseurl }}</link>
         <description>{{ site.site_subtitle }}</description>
-        <managingEditor>{{ site.author.email }} ({{ site.author.full_name }})</managingEditor>
+        <managingEditor>{{ site.email }} ({{ site.author}})</managingEditor>
         <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
         <language>{{ site.site_language }}</language>
         {% for post in site.posts limit:15 %}
@@ -16,8 +16,8 @@ layout: nil
             <title>{{ post.title }}</title>
             <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
             <description>{{ post.content | xml_escape }}</description>
-            <link>{{ site.absolute_baseurl }}{{ post.url }}</link>
-            <guid>{{ site.absolute_baseurl }}{{ post.url }}</guid>
+            <link>{{ site.baseurl }}{{ post.url }}</link>
+            <guid>{{ site.baseurl }}{{ post.url }}</guid>
         </item>
 
         {% endfor %}
