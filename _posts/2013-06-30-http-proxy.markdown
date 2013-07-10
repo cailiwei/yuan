@@ -15,8 +15,10 @@ date: 2013-06-30
  
 ### http代理设置
 
-{% highlight bash linenos %}	
-    vi /etc/environment
+ ```
+ $ vi /etc/environment
+ ```
+{% highlight bash linenos %}
     export http_proxy=http://liwei.cai:CLW712mm@172.16.100.47:8080
     export ftp_proxy=ftp://liwei.cai:CLW712mm@172.16.100.47:8080
     export https_proxy=https://liwei.cai:CLW712mm@172.16.100.47:8080
@@ -24,8 +26,8 @@ date: 2013-06-30
 
 ### apt-get代理设置
 
+    vi /etc/apt/apt.conf  
 {% highlight bash linenos %}
-    vi /etc/apt/apt.conf
     Acquire::http::proxy "http://liwei.cai:CLW712mm@172.16.100.47:8080/";
     Acquire::ftp::proxy "ftp://liwei.cai:CLW712mm@172.16.100.47:8080/";
     Acquire::https::proxy "https://liwei.cai:CLW712mm@172.16.100.47:8080/";
@@ -33,19 +35,20 @@ date: 2013-06-30
     
 ### git代理设置
 
-{% highlight bash linenos %}	
-    sudo apt-get install socat
-    sudo vi /usr/bin/gitproxy
-    
-    #!/bin/bash
-    PROXY=172.16.100.47
-    PROXYPORT=8080
-    PROXYAUTH=liwei.cai:CLW712mm
-    exec socat STDIO PROXY:$PROXY:$1:$2,proxyport=$PROXYPORT,proxyauth=$PROXYAUTH
-    
-    sudo  chmod +x /usr/bin/gitproxy
-    git config --global core.gitproxy gitproxy
-{% endhighlight %}
+```
+$ sudo apt-get install socat
+$ sudo vi /usr/bin/gitproxy
+```
+``` bash Set git http proxy http://blog.cailiwei.com.cn/blog/2013/06/30/http-proxy/ Source Article
+#!/bin/bash
+PROXY=172.16.100.47
+PROXYPORT=8080
+PROXYAUTH=liwei.cai:CLW712mm
+exec socat STDIO PROXY:$PROXY:$1:$2,proxyport=$PROXYPORT,proxyauth=$PROXYAUTH
+```
+sudo  chmod +x /usr/bin/gitproxy
+git config --global core.gitproxy gitproxy
+```
     
 ### ssh代理设置
 
