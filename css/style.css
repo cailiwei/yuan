@@ -445,7 +445,7 @@ hr { display: none; }
 	margin: 0;
 	padding: 12px 0px;
 	border-bottom: 1px solid #E9E8DD;
-	background: url(images/img08.gif) no-repeat left 18px;
+	background: url(images/img06.gif) no-repeat left 18px; /* cancel set img*/
 }
 
 #sidebar li li a {
