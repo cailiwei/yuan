@@ -350,6 +350,7 @@ hr { display: none; }
 
 .post .links a{
 	text-decoration: none;
+	text-align: center;
 }
 
 .post .post-bottom {
