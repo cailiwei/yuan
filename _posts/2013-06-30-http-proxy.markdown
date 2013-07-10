@@ -27,7 +27,7 @@ date: 2013-06-30
 ### apt-get代理设置
 
     vi /etc/apt/apt.conf  
-{% highlight bash linenos %}
+{% highlight bash %}
     Acquire::http::proxy "http://liwei.cai:CLW712mm@172.16.100.47:8080/";
     Acquire::ftp::proxy "ftp://liwei.cai:CLW712mm@172.16.100.47:8080/";
     Acquire::https::proxy "https://liwei.cai:CLW712mm@172.16.100.47:8080/";
@@ -46,9 +46,10 @@ PROXYPORT=8080
 PROXYAUTH=liwei.cai:CLW712mm
 exec socat STDIO PROXY:$PROXY:$1:$2,proxyport=$PROXYPORT,proxyauth=$PROXYAUTH
 ```
+~~~ bash
 sudo  chmod +x /usr/bin/gitproxy
 git config --global core.gitproxy gitproxy
-```
+~~~
     
 ### ssh代理设置
 
