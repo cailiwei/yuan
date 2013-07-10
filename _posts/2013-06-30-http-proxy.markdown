@@ -40,11 +40,11 @@ $ sudo apt-get install socat
 $ sudo vi /usr/bin/gitproxy
 ```
 ``` bash Set git http proxy http://blog.cailiwei.com.cn/blog/2013/06/30/http-proxy/ Source Article
-#!/bin/bash
-PROXY=172.16.100.47
-PROXYPORT=8080
-PROXYAUTH=liwei.cai:CLW712mm
-exec socat STDIO PROXY:$PROXY:$1:$2,proxyport=$PROXYPORT,proxyauth=$PROXYAUTH
+    #!/bin/bash
+    PROXY=172.16.100.47
+    PROXYPORT=8080
+    PROXYAUTH=liwei.cai:CLW712mm
+    exec socat STDIO PROXY:$PROXY:$1:$2,proxyport=$PROXYPORT,proxyauth=$PROXYAUTH
 ```
 ~~~ bash
 sudo  chmod +x /usr/bin/gitproxy
