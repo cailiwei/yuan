@@ -55,10 +55,12 @@ for var in `ls`; do mv -f "$var" `echo "$var" |sed 's/....$/vzomik/'`; done
 ###用sed在文档中间指定行后增加一行
 
 有时候我们会用脚本，来修改文档，比如在文档中增加一行或减少一行
+
     echo "1";
     echo "2";
     echo "4";
     echo "5";
+
 如上例子，想要在echo "2";后面加上一条echo "3";可以用如下命令:
 {% highlight bash %}
 sed -i '/echo \"2\";/a\echo \"3\";' test.sh
