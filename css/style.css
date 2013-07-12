@@ -426,6 +426,10 @@ hr { display: none; }
 	padding:1.5em 2em;
 }
 
+#disqus_thread {
+	padding: 15px 15px 15px 15px;
+	color: #808080;
+}
 
 /* Sidebar */
 
