@@ -36,7 +36,7 @@ Acquire::https::proxy "https://liwei.cai:CLW712mm@172.16.100.47:8080/";
     
 ## git代理设置
 
-  首先下载工具软件socat:`$ sudo apt-get install socat`
+  首先下载工具软件socat：`$ sudo apt-get install socat`  
   然后新建执行脚本：`$ sudo vi /usr/bin/gitproxy`
 
 {% highlight bash %}
@@ -47,7 +47,7 @@ PROXYAUTH=liwei.cai:CLW712mm
 exec socat STDIO PROXY:$PROXY:$1:$2,proxyport=$PROXYPORT,proxyauth=$PROXYAUTH
 {% endhighlight %}
 
-配置执行权限：
+配置执行权限：   
     sudo  chmod +x /usr/bin/gitproxy  
 	git config --global core.gitproxy gitproxy  
 最后就是找git库，测试是否配置成功。  
