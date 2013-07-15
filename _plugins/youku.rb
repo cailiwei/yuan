@@ -16,7 +16,7 @@ class YouKu < Liquid::Tag
 					@height = $3.to_i
 				end
 			else
-				raise "在\"Youku\"标签中未提供视频ID或提供的ID不合法。 Illgeal ID presented."
+				raise "The video id error."
 			end
 		end
 
