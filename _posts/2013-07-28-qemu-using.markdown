@@ -47,20 +47,22 @@ TUN与TAP的区别在于，TUN工作在网络层，而TAP则工作在数据链�
 TUN/TAP的典型应用包括：OpenVPN、OpenSSH 以及虚拟机网络。
 
 ### 二、在Ubuntu系统中配置qemu网络  
-1. 内核支持需要对TUN/TAP设备和虚拟网桥提供支持：  
+1\. 内核支持需要对TUN/TAP设备和虚拟网桥提供支持:
+{% highlight make linenos %} 
     （1）Device Drivers
     	--> Network device support
     		--> Universal TUN/TAP device driver support
     （2）Networking support
     	--> Networking options
     		--> 802.1d Ethernet Bridging
-2. 安装两个配置网络所需软件包：  
+{% endhighlight %}
+2\. 安装两个配置网络所需软件包:
 {% highlight bash %}
     apt-get install bridge-utils        # 虚拟网桥工具
     apt-get install uml-utilities       # UML（User-mode linux）工具
 {% endhighlight %}
-3. 配置虚拟网桥的操作（假设系统启动后eth0已经启动，并且从DHCP获得IP地址）。
-{% highlight bash %}
+3\. 配置虚拟网桥的操作（假设系统启动后eth0已经启动，并且从DHCP获得IP地址）。
+{% highlight bash linenos %}
     ifconfig eth0 down                  # 先关闭eth0接口
     brctl addbr br0                     # 增加一个虚拟网桥br0
     brctl addif br0 eth0                # 在br0中添加一个接口eth0
@@ -74,19 +76,25 @@ TUN/TAP的典型应用包括：OpenVPN、OpenSSH 以及虚拟机网络。
     brctl showstp br0                   # 查看br0的各接口信息
 {% endhighlight %}
 在没有dhcp服务器的网络中也可以用ifconfig命令为br0接口配置一个静态IP地址：
+{% highlight bash %}
     ifconfig br0 192.168.0.22 netmask 255.255.255.0
     route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.168.0.254
-4. 配置TAP设备的操作：
+{% endhighlight %}
+4\. 配置TAP设备的操作：
+{% highlight bash %}
     tunctl -t tap0 -u root              # 创建一个tap0接口，只允许root用户访问
     brctl addif br0 tap0                # 在虚拟网桥中增加一个tap0接口
     ifconfig tap0 0.0.0.0 promisc up    # 打开tap0接口
     brctl showstp br0                   # 显示br0的各个接口
-5. 假设内核的顶层目录在/usr/src/linux，且内核已经编译完毕。启动qemu的操作：
+{% endhighlight %}
+5\. 假设内核的顶层目录在/usr/src/linux，且内核已经编译完毕。启动qemu的操作：
+{% highlight bash %}
 	cd /usr/src/linux
 	qemu -kernel arch/x86/boot/bzImage -net nic -net tap,ifname=tap0,script=no,downscript=no 
+{% endhighlight %}
 如果省略script和downscript参数，qemu在启动时会以第一个不存在的tap接口名（通常是tap0）为参数去调用/etc/qemu-ifup脚本，而在退出时调用/etc/qemu-ifdown脚本。这两个脚本需要用户自行编写，其主要作用通常是：在启动时创建和打开指定的TAP接口，并将该接口添加到虚拟网桥中；退出时将该接口从虚拟网桥中移除，然后关闭该接口。由于配置TAP设备的操作前面已经做过了，所以启动qemu时显式地告诉qemu不要执行这两个脚本。这里需要严重注意：-net tap的各参数之间不要有空格！为了这个问题花了半个小时 。  
-6. 为了在系统启动时能够自动配置虚拟网桥和TAP设备，编写/etc/network/interfaces文件的内容如下：
-{% highlight bash %}
+6\. 为了在系统启动时能够自动配置虚拟网桥和TAP设备，编写/etc/network/interfaces文件的内容如下：
+{% highlight bash linenos %}
     auto lo
     iface lo inet loopback
     
