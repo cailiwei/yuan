@@ -38,11 +38,11 @@ task :post do
 		post.puts "---"
 		post.puts "layout: post"
 		post.puts "title: \"#{title.gsub(/-/,' ')}\""
+		post.puts "tags: []"
 		post.puts 'description: ""'
 		post.puts "category: "
-		post.puts "comments: true"
+		post.puts "comment: true"
 		post.puts "date: #{Time.now.localtime.strftime('%Y-%m-%d %H:%M')}"
-		post.puts "tags: []"
 		post.puts "---"
 	end
 end # task :post
@@ -64,10 +64,10 @@ task :new_post, :title do |t, args|
 		post.puts "---"
 		post.puts "layout: post"
 		post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
+		post.puts "tags: []"
+#		post.puts "meta: true"
+		post.puts "comment: true"
 		post.puts "date: #{Time.now.localtime.strftime('%Y-%m-%d %H:%M')}"
-		post.puts "meta: true"
-		post.puts "comments: true"
-		post.puts "tags:"
 		post.puts "---"
 	end
 end
