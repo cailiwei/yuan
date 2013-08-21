@@ -2,7 +2,7 @@
 layout: post
 tags: [linux, qemu, 虚拟机]
 comment: true
-title: "QEMU的使用小结"
+title: "QEMU的网络使用小结"
 date: 2013-07-28 17:45
 ---
 
