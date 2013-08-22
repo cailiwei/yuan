@@ -33,41 +33,37 @@ Markdown能让文档更容易读、写和修改。HTML是一种发布式的格�
 ###标题
 Markdown支持两种标题语法：类Setext和类atx形式。
 前者使用`=`来表示最高阶标题，`-`表示第二阶标题。
-注意这些符号是在标题的下方，个数是任意的（大于一个）
-例如:
-``
-    This is h1. 
-    =========== 
-    This is h2. 
-    ----------- 
-``
+注意这些符号是在标题的下方，个数是任意的（大于一个）例如:
+
+    This is h1.
+    ===========
+    This is h2.
+    -----------
+
 #####显示结果：
 > This is h1.
 > ==========
+
 > This is h2.
 > ----------
 
 类atx形式则是平常见到比较多的使用1到6个`#`来不同的标题阶数。数量越多，字体越小。
-``
-    # This is h1
-    ## This is h2
-``
+
+    #This is h1.
+    ##This is h2.
+
 #####显示结果：
-> # This is h1.
-> ## This is h2.
+> #This is h1.
+
+> ##This is h2.
   
 ###区块引用
 Markdown标记区块引用是使用类似email中用`>`的引用方式。使用区块引用只需要在行首使用`>`即可。如果只是在每个段落的第一行加上`>`也是可以的。
-
 例如:
-``
-	> Do you know that you are so special. 
-	but in some way,
-	I think you are a little too special.
+
+    > Do you know that you are so special. but in some way, I think you are a little too special.
 
     > What do you think?
-``
-这样都是可以的。
 
 #####显示结果：
 > Do you know that you are so special. but in some way, I think you are a little too special.
@@ -76,16 +72,18 @@ Markdown标记区块引用是使用类似email中用`>`的引用方式。使用�
 
 如果想要在引用中继续嵌套使用也是可以的，需要做的就是，继续使用`>`就可以了。
 另外，引用中的markdown语法是可以正常使用的。
-
 例如：
-``
-	> ## this is a title.
+
+    > ##this is a title.
+    
     > > this is a nested markdown sentence.
+    
     > 1. item1
     > 1. item2
-``
+
 #####显示结果：
-> ## this is a title.
+> ##this is a title.
+
 > > this is a nested markdown sentence.
 
 > 1. item1
@@ -94,15 +92,14 @@ Markdown标记区块引用是使用类似email中用`>`的引用方式。使用�
 ###列表
 在上面的例子中，我们用到了列表。在markdown中，可以使用`*`、`+`、`-`来作为标记。
 另外，也可以使用`数字`+`.`的方式来作列表，这里的数字不一定要按照顺序来，只要是符合上述规则即可，markdown的最终显示会从1开始逐个显示。
-
 例如: 
-``
-	> 1. I Love China.
+
+    > 1. I Love China.
     > 3. I Love Ruby.
     > 1. Item1.
     > 3. Item2.
     > 10. Item3.
-``
+
 #####显示效果:
 > 1. I Love China.
 > 3. I Love Ruby.
@@ -117,85 +114,70 @@ Markdown标记区块引用是使用类似email中用`>`的引用方式。使用�
 如果在段落中含有`2012. what a fatancy year.`,在为了避免被“翻译”成列表，那么需要使用`\`转义数字后面的那个`.`。
 
 ###代码区块
-作为程序猿经常要使用代码贴在文章中，而这些代码，我们都要保持它的格式不被修改。
-在Markdown中，markdown会将代码块使用`<pre>`和`<code>`标签将之包起来。
-那么我们如何使用代码块呢?4个空格或者一个TAB。嗯，就是这样简单。
+作为程序猿经常要使用代码贴在文章中，而这些代码，我们都要保持它的格式不被修改。在Markdown中，markdown会将代码块使用`<pre>`和`<code>`标签将之包起来。
+那么我们如何使用代码块呢?4个空格或者一个TAB。就是这样简单。
 例如：
 
     def	say(gf)
         puts "Hello, #{gf}."
     end
 
-#####显示效果:如上
 代码块会一直持续到没有缩进的行或者文件结束。
 
 ###分割线
-什么？想使用分割线?嗯，这个也很简单：使用3个以上的星号、减号、底线就可以。不过这里的要求是：行内只能有以上三种，但不能包含除空格外的其它字符。
-
+使用3个以上的星号、减号、底线就可以。不过这里的要求是：行内只能有以上三种，但不能包含除空格外的其它字符。
 例如:
-``
-	* * *
+
+    * * *
     ----
     -	-	-
     ____      __________        ___________
-``
+
 #####显示效果：
-* * *
-----
--	-	-
-____      __________        ___________
+> * * *
+> ----
+> - - -
+> ___ _____ ___ _____ _____ ____
 
 ##区段元素
 
 ###链接
 Markdown支持两种形式的链接语法：行内式和参考式。它们的共同点是：都是使用`[]`来标记的。
-
 行内式：在方括号后面使用圆括号，并在圆括号中写上链接地址和标题即可(可选)，title字段需要使用双引号包起来。
-
 例如: 
-``
-	This is a [Link](http://blog.cailiwei.com.cn,"My Blog") to my site.
-``
+
+    This is a [Link](http://blog.cailiwei.com.cn,"My Blog") to my site.
+
 #####显示结果：
-This is a [Link](http://blog.cailiwei.com.cn,"My Blog") to my site.
+
+> This is a [Link](http://blog.cailiwei.com.cn,"My Blog") to my site.
 
 这里的链接地址不局限于http这种链接，也可以使用相对链接地址。
+参考式： 这种方式指的是在第一个方括号后面要继续使用一个方括号，在后者中要输入链接的目标。
 
-参考式： 这种方式指的是在第一个方括号后面要继续使用一个方括号，在后者中要输入链接的目标。这里的方括号不用跟得太”亲密“.
-``
-	This is the link to the [Top] [top] Link.
-``
-我在文章上部定义了:
-``
-	[top]: # "Top of the post."
-``
+    This is the link to the [Top] [top] Link.
+
+    [top]: # "Top of the post."
+
 #####显示效果：
+
 [top]: # "Top of the post."
-This is the link to the [Top][top] Link.
+> This is the link to the [Top][top] Link.
 
 链接的网址也可以使用方括号`<>`包起来，定义ID的地方，后面在跟一个冒号后，需要加一个空格或制表符，Title可选，使用逗号隔开。
 链接的标识标签可以使用字母、数字、空白和标点符号，不区分大小写。
-隐式链接能够让我们省略制定的标记。在原来的方括号后面，添加一个空的方括号，默认会跳转到http:标识.com的链接上去。
-
-例如：
-``
-	[Google][]
-    [Google]: http://www.google.com
-``
-结果:
-[Google][]
-[Google]: http://www.google.com
-
 链接的定义位置任意。下面我们就将本文的参考代码写在下面：
-``
-	本文参考的链接包括[wowubuntu][1]和[appinn][2]
-	[1]: http://www.wowubuntu.com	"WowUbuntu.com"
-	[2]: http://www.appinn.com	"Appinn.com"
-``
+
+    本文参考的链接包括[wowubuntu][1]和[appinn][2]
+    
+    [1]: http://www.wowubuntu.com	"WowUbuntu.com"
+    [2]: http://www.appinn.com	"Appinn.com"
+
 #####显示效果:
 本文参考的链接包括[wowubuntu][1]和[appinn][2]
-[1]: http://wowubuntu.com/markdown	"WowUbuntu.com"
-[2]: http://www.appinn.com/markdown-tools	"Appinn.com"
+
+[1]: http://wowubuntu.com/markdown "WowUbuntu.com"
+[2]: http://www.appinn.com/markdown-tools "Appinn.com"
 
 ###强调
 我们可以使用`*`和`_`来强调某个词，单个的字符使用的标签为`<em>`,使用2个则为`<strong>`。
@@ -203,34 +185,30 @@ This is the link to the [Top][top] Link.
 
 ###代码
 行内的一小段代码，可以使用反引号（在TAB上面的那位）来将其包起来
-``
-	``There is a back door here`.``
-``
-``There is a back door here`.``
+
+    ``There is a back door here`.``
+
+> ``There is a back door here`.``
 
 ##图片
-最后我们说下图片。图片在一个文章中必不可少，有助于帮助读者更好的理解作者的意图。那么在Markdown中如何使用图片链接呢？
-``
-	![Alt Text](path of the picture "Option title")
-``
+图片在一个文章中必不可少，有助于帮助读者更好的理解作者的意图。
 不过Markdown没有办法来指定图片的宽高，所以如果图片太BIG，请选择``<img>``标签，因为Markdown是兼容这些标签的。
-
 下面我们贴一个指向ruby china社区Logo的图片：
-``
-	![ruby-china logo](http://l.ruby-china.org/assets/text_logo-3609989243456a4c620bf2342986b638.png  "logo")
-``
+
+    ![ruby-china logo](http://l.ruby-china.org/assets/text_logo-3609989243456a4c620bf2342986b638.png  "logo")
+
 #####显示结果：
 ![ruby-china logo](http://l.ruby-china.org/assets/text_logo-3609989243456a4c620bf2342986b638.png  "logo")
 
 ###Others
-另外如果使用尖括号将网址、邮箱放在里面，你会发现，Markdown 已经为了做了很多事。
-``
-	<http://blog.cailiwei.com.cn>
+另外如果使用尖括号将网址、邮箱放在里面，你会发现，Markdown已经为了做了很多事。
 
-	Contact Me: <cailiwei516@gmail.com>
-``
-####显示结果:
-<http://cailiwei.github.com>
+    <http://blog.cailiwei.com.cn>
 
-Contact Me: <cailiwei516@gmail.com>
+    Contact Me: <cailiwei516@gmail.com>
+
+#####显示结果:
+> <http://cailiwei.github.com>
+
+> Contact Me: <cailiwei516@gmail.com>
 

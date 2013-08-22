@@ -313,7 +313,7 @@ hr { display: none; }
 #entry {
 	margin-bottom: 10px;
 	padding: 1.54cm 1.91cm 1.54cm 1.91cm;
-	background-color:#ffebe2; /* 老婆说，男孩子不要那么喜欢粉色 */
+	background-color:#ffebe2; 
 	color:#000000;
 	border:1px solid #909090; background:#fff; color:#333;
 	filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);
@@ -357,8 +357,8 @@ hr { display: none; }
     font-size: 1.0em;
 }
 #entry blockquote {
-    padding-left: 30px;
-    border-left: 3px #8A8A8A solid;
+    padding-left: 10px;
+    border-left: 3px #eef solid;
 }
 #entry ul, #entry ol {
     margin-left: 20px;
@@ -366,20 +366,27 @@ hr { display: none; }
 /* code backlight */
 #entry pre {
     margin: 10px;
-    border: 1px solid #ddd;
     background-color: #eef;
     padding: 10px;
-/*  color: #f2f2f2; */
+    line-height: 20px
+	border: 1px solid #ddd; 
     overflow: auto;
 }
 #entry code {
     font-size: 14px;
     font-family: "Times New Roman", 'monospace','Monaco';
-	border: 1px solid #ddd;
 	background-color: #eef;
-	padding: 0.2em;
+	border: 1px solid #ddd; 
 }
 #entry pre code {
+    font-size: 14px;
+    font-family: 'monospace','Monaco';
+    border: none;
+}
+.lineno {
+    font-size: 14px;
+    font-family: 'monospace','Monaco';
+	text-align: left;
 	border: none;
 }
 #entry p {
