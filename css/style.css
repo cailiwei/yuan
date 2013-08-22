@@ -357,8 +357,8 @@ hr { display: none; }
     font-size: 1.0em;
 }
 #entry blockquote {
-    padding-left: 40px;
-    border-left: 5px #7d7d7d solid;
+    padding-left: 30px;
+    border-left: 3px #8A8A8A solid;
 }
 #entry ul, #entry ol {
     margin-left: 20px;
@@ -374,16 +374,17 @@ hr { display: none; }
 }
 #entry code {
     font-size: 14px;
-    font-family: 'monospace','Monaco';
+    font-family: "Times New Roman", 'monospace','Monaco';
 	border: 1px solid #ddd;
 	background-color: #eef;
 	padding: 0.2em;
 }
 #entry pre code {
-	border-left: 3px #7d7d7d solid;
+	border: none;
 }
 #entry p {
     margin: 1em 0;
+    text-indent: 2em
 }
 /* terminal */
 #entry pre.terminal {
