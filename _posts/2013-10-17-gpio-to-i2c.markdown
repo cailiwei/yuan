@@ -1,0 +1,423 @@
+---
+layout: post
+title: "GPIO模拟I2C的设计"
+tags: [Linux, 技术]
+comment: true
+date: 2013-10-17 23:19
+---
+
+##写在前面的话
+好久没有来这边唠叨两句了,最近有好长一段时间都很烦躁,最主要的原因还是工作的事情,看见软件部的一些同事都走了,而且感觉公司在走向萧条,好久都没有什么新项目了,大家基本都很怠慢,而且有一年多了都没有涨薪,自己也感觉在这样呆下去,前途渺茫啊...
+也一度积极地投递简历,搞得自己很忙的样子,而且久久也不能平静,最后获得了两家面试机会,或许初来咋到,对于跳槽没有什么概念,然后直接就被pass了一家,还有一家谈得很好获得了offer,一度心情激动地打算去,最后还是因为种种因素留了下来; 在工作中有这么一段插曲,或许也算正常,这对于个人的职业规划该有一个新的思考:谁都想找到那个成功的捷径,但捷径也需要沉淀,对于有些问题的思考真的还是不够...
+在纠结,彷徨,迷茫中度过了很长一段时间, 是时候清醒了.
+
+让我们回到正题吧, 前段时间, 有个项目用到一个正负压芯片:`DCDC ISL98607EIAZ-T`, 这是一个通过I2C信号输入来控制芯片的电压输出大小的, 像我们调屏的, 遇到这么一个I2C控制器件, 肯定是一件好事了,在一个公司的职能分得很细的公司, 要多干点活, 还真是不太容易呢. 在我第一时间拿到板子时, 机械地开始调起来了, 缺少对新东西的思考, 总是走一步算一步, 这样是不对的, 往往会因为各种问题而碰壁.
+
+##GPIO模拟I2C的设计
+其实在很多时候都不需要用GPIO来模拟I2C, Linux内核中对I2C支持很好, 只要稍微配置一下I2C地址就可以了, 也可以在内核已提供了I2C操作方法等基础上配置一下GPIO来实现模拟; 这个正负压芯片是LCD的供电设备, 只要使能了这个设备, 然后向该I2C设备地址写入某个值, 使输出电压达到LCD的供电要求, 然后再调试LCD的MIPI配置, 看看波形, 改改初始化代码和配置知道LCD点亮就OK了, 这基本就是我的工作.
+
+I2C就两根线: SDA和SCL, 要实现模拟就需要两个GPIO分别模拟SDA和SCL, 然后按照I2C协议分别对GPIO1和GPIO2进行输入输出配置和拉高拉低设置: 
+
+1. 起始和停止条件;
+2. 数据传输条件(接受和发送字节);
+3. 应答信号的处理;
+
+下面是i2c的读写操作的时序队列：
+
+![i2c-queue](http://blog.cailiwei.com.cn/images/i2c.png "i2c读写队列")
+
+###主要实现的函数有:
+1\. GPIO设置与清除
+{% highlight c %}
+static void i2c_clr( uint8_t whichline);
+static void i2c_set( uint8_t whichline);
+{% endhighlight %}
+2\. I2C的起始与停止
+{% highlight c %}
+static void i2c_start_bit(void);
+static void i2c_stop_bit(void);
+{% endhighlight %}
+3\. I2C的读写
+{% highlight c %}
+static uint8_t i2c_data_read(void);
+static void i2c_send_byte(uint8_t c);
+static uint8_t i2c_receive_byte(void);
+{% endhighlight %}
+4\. I2C的应答
+{% highlight c %}
+static uint8_t i2c_receive_ack(void);
+static void i2c_send_ack(void);
+{% endhighlight %}
+5\. 实现I2C根据地址读写命令函数
+{% highlight c %}
+/*  
+ *  read data from the I2C bus by GPIO simulated of a device rountine.
+ *
+ *  @param  devaddress:  address of the device
+ *  @param  address: address of register within device
+ *   
+ *  @return value: data from the device readed
+ * 
+ */
+uint8_t gpio_i2c_read(uint8_t i2c_addr, uint8_t reg_addr)
+{
+	int rxdata=0;
+
+	/* 7 bit for i2c addr, the 8th bit for R/W(1/0) */
+	i2c_addr = i2c_addr << 1;
+	/* send i2c addr */
+	i2c_start_bit();
+	i2c_send_byte((uint8_t)(i2c_addr));
+	i2c_receive_ack();
+
+	/* send i2c reg */
+	i2c_send_byte(reg_addr);
+	i2c_receive_ack();
+
+	/* start to read */
+	i2c_start_bit();
+	i2c_send_byte((uint8_t)(i2c_addr) | 1);
+	i2c_receive_ack();
+	rxdata = i2c_receive_byte();
+	i2c_send_ack();
+	i2c_stop_bit();
+
+	dprintf(INFO, "clw: Read I2C reg: 0x%x data: 0x%x.\n", reg_addr, rxdata);
+	return rxdata;
+}
+
+/*
+ *  writes data to a device on the I2C bus rountine. 
+ *
+ *  @param  devaddress:  address of the device
+ *  @param  address: address of register within device
+ *  @param  data:   data for write to device
+ *
+ */
+void gpio_i2c_write(uint8_t i2c_addr, uint8_t reg_addr, uint8_t data)
+{
+	/* 7 bit for i2c addr, the 8th bit for R/W(1/0) */
+	i2c_addr = i2c_addr << 1;
+
+	/* send i2c addr */
+	i2c_start_bit();
+	i2c_send_byte((uint8_t)(i2c_addr));
+	i2c_receive_ack();
+
+	/* send i2c reg */
+	i2c_send_byte(reg_addr);
+	i2c_receive_ack();
+
+	/* send i2c data */
+	i2c_send_byte(data); 
+	i2c_receive_ack();
+	i2c_stop_bit();
+}
+{% endhighlight %}
+
+6\. 方法的调用
+{% highlight c %}
+gpio_i2c_init();
+/* read dcdc reg */
+gpio_i2c_read(0x29, 0x05);
+
+gpio_i2c_read(0x29, 0x06);
+gpio_i2c_read(0x29, 0x08);
+gpio_i2c_read(0x29, 0x09);
+
+gpio_i2c_write(0x29, 0x06, 0x0B); /* VBST = 5.7V */
+gpio_i2c_read(0x29, 0x06);
+mdelay(1);
+
+gpio_i2c_write(0x29, 0x08, 0x0C); /* VP = 5.6V */
+gpio_i2c_read(0x29, 0x08);
+mdelay(1);
+
+gpio_i2c_write(0x29, 0x09, 0x08); /* VN = -5.4V */
+gpio_i2c_read(0x29, 0x09);
+{% endhighlight %}
+
+###代码具体实现如下:
+{% highlight c %}
+#include <dev/gpio.h>
+#include <platform/gpio.h>
+#include <debug.h>
+
+#define GPIO_I2C_BASE 0xa1380000
+
+#define GPIO_I2C0_SCL 	60
+#define GPIO_I2C0_SDA 	61
+
+#define GPIO_I2C1_SCL 	131
+#define GPIO_I2C1_SDA 	132
+
+#define SCL GPIO_I2C1_SCL
+#define SDA GPIO_I2C1_SDA
+
+/* 
+ * I2C by GPIO simulated  clear 0 routine.
+ *
+ * @param whichline: GPIO control line
+ *
+ */
+static void i2c_clr( uint8_t whichline)
+{
+	gpio_set(whichline, 0);
+}
+
+/* 
+ * I2C by GPIO simulated  set 1 routine.
+ *
+ * @param whichline: GPIO control line
+ *
+ */
+static void i2c_set( uint8_t whichline)
+{
+	gpio_set(whichline, 1);
+}
+
+/*
+ *  delays for a specified number of micro seconds rountine.
+ *
+ *  @param usec: number of micro seconds to pause for
+ *
+ */
+void time_delay_us()
+{
+	mdelay(1); // 100Hz
+}
+
+/* 
+ * I2C by GPIO simulated  read data routine.
+ *
+ * @return value: a bit for read 
+ *
+ */
+static uint8_t i2c_data_read(void)
+{
+	if (gpio_get(SDA))
+		return 1;
+	else
+		return 0;
+}
+
+/*
+ * sends a start bit via I2C rountine.
+ * 
+ */
+static void i2c_start_bit(void)
+{
+	/* 在clk为高的时候，sda有个下降沿 */
+	mdelay(1);
+	i2c_set(SDA);
+	i2c_set(SCL);
+	mdelay(1);
+	i2c_clr(SDA);
+	mdelay(1);
+	i2c_clr(SCL);
+	mdelay(1);
+}
+
+/*
+ * sends a stop bit via I2C rountine.
+ * 
+ */
+static void i2c_stop_bit(void)
+{
+	/* actual stop bit */
+	i2c_clr(SDA);
+	i2c_set(SCL);
+	mdelay(1);
+	i2c_set(SDA);
+	mdelay(1);
+}
+
+/*
+ * sends a character over I2C rountine.
+ *
+ * @param  c: character to send
+ *
+ */
+static void i2c_send_byte(uint8_t c)
+{
+	int i;
+	uint8_t sb;
+	/* 屏蔽中断位 */
+	// local_irq_disable();
+	for (i=7; i>=0; i--)
+	{
+		/* SCL为低，SDA改变 */
+		sb = (c >> i) & 1;
+
+		if (sb)
+			i2c_set(SDA);
+		else
+			i2c_clr(SDA);
+
+		/* SCL为高，SDA保持取值 */
+		i2c_set(SCL);
+		mdelay(1);
+		i2c_clr(SCL);
+		mdelay(1);
+	}
+	/* 开启中断位 */
+	// local_irq_enable();
+}
+
+/*
+ *  receives a character from I2C rountine.
+ *
+ *  @return value: character received
+ *
+ */
+static uint8_t i2c_receive_byte(void)
+{
+	int i, j=0;
+	// local_irq_disable();
+	gpio_tlmm_config(GPIO_CFG(SDA, 0, GPIO_INPUT, GPIO_NO_PULL, GPIO_8MA), GPIO_ENABLE);
+	gpio_config(SDA, GPIO_INPUT);
+
+	for (i=0; i<8; i++)
+	{
+		i2c_set(SCL);
+		mdelay(1);
+
+		if( i2c_data_read() )
+			j+=(1<<(7-i));
+
+		i2c_clr(SCL);
+		mdelay(1);
+	}
+
+	gpio_tlmm_config(GPIO_CFG(SDA, 0, GPIO_OUTPUT, GPIO_NO_PULL, GPIO_8MA), GPIO_ENABLE);
+	gpio_config(SDA, GPIO_OUTPUT);
+
+	return j;
+}
+
+/*  receives an acknowledge from I2C rountine.
+ *
+ *  @return value: 0--Ack received; 1--Nack received
+ *          
+ */
+static uint8_t i2c_receive_ack(void)
+{
+	int nack;
+
+	gpio_tlmm_config(GPIO_CFG(SDA, 0, GPIO_INPUT, GPIO_NO_PULL, GPIO_8MA), GPIO_ENABLE);
+	gpio_config(SDA, GPIO_INPUT);
+
+	i2c_set(SCL);
+	mdelay(1);
+
+	nack = i2c_data_read();
+
+	i2c_clr(SCL);
+	mdelay(1);
+
+	gpio_tlmm_config(GPIO_CFG(SDA, 0, GPIO_OUTPUT, GPIO_NO_PULL, GPIO_8MA), GPIO_ENABLE);
+	gpio_config(SDA, GPIO_OUTPUT);
+	/* 数据线为低时，表示有应答信号 */
+	if (nack == 0)
+		return 1;
+	else
+		return 0;
+}
+
+/* 
+ * sends an acknowledge over I2C rountine.
+ *
+ */
+static void i2c_send_ack(void)
+{
+	i2c_set(SDA);
+	i2c_set(SCL);
+	mdelay(1);
+	i2c_clr(SCL);
+	mdelay(1);
+}
+
+/*  
+ *  read data from the I2C bus by GPIO simulated of a device rountine.
+ *
+ *  @param  devaddress:  address of the device
+ *  @param  address: address of register within device
+ *   
+ *  @return value: data from the device readed
+ * 
+ */
+uint8_t gpio_i2c_read(uint8_t i2c_addr, uint8_t reg_addr)
+{
+	int rxdata=0;
+
+	/* 7 bit for i2c addr, the 8th bit for R/W(1/0) */
+	i2c_addr = i2c_addr << 1;
+	/* send i2c addr */
+	i2c_start_bit();
+	i2c_send_byte((uint8_t)(i2c_addr));
+	i2c_receive_ack();
+
+	/* send i2c reg */
+	i2c_send_byte(reg_addr);
+	i2c_receive_ack();
+
+	/* start to read */
+	i2c_start_bit();
+	i2c_send_byte((uint8_t)(i2c_addr) | 1);
+	i2c_receive_ack();
+	rxdata = i2c_receive_byte();
+	i2c_send_ack();
+	i2c_stop_bit();
+
+	dprintf(INFO, "clw: Read I2C reg: 0x%x data: 0x%x.\n", reg_addr, rxdata);
+	return rxdata;
+}
+
+/*
+ *  writes data to a device on the I2C bus rountine. 
+ *
+ *  @param  devaddress:  address of the device
+ *  @param  address: address of register within device
+ *  @param  data:   data for write to device
+ *
+ */
+void gpio_i2c_write(uint8_t i2c_addr, uint8_t reg_addr, uint8_t data)
+{
+
+	/* 7 bit for i2c addr, the 8th bit for R/W(1/0) */
+	i2c_addr = i2c_addr << 1;
+
+	/* send i2c addr */
+	i2c_start_bit();
+	i2c_send_byte((uint8_t)(i2c_addr));
+	i2c_receive_ack();
+
+	/* send i2c reg */
+	i2c_send_byte(reg_addr);
+	i2c_receive_ack();
+
+	/* send i2c data */
+	i2c_send_byte(data); 
+	i2c_receive_ack();
+	i2c_stop_bit();
+}
+
+/*
+ * GPIO use for i2c init.
+ *
+ */
+void gpio_i2c_init(void)
+{
+	/* Config i2c gpio */
+	gpio_tlmm_config(GPIO_CFG(GPIO_I2C1_SCL, 0, GPIO_OUTPUT, GPIO_NO_PULL, GPIO_8MA), GPIO_ENABLE);
+	gpio_tlmm_config(GPIO_CFG(GPIO_I2C1_SDA, 0, GPIO_OUTPUT, GPIO_NO_PULL, GPIO_8MA), GPIO_ENABLE);
+
+	gpio_config(GPIO_I2C1_SCL, GPIO_OUTPUT);
+	gpio_config(GPIO_I2C1_SDA, GPIO_OUTPUT);
+
+	gpio_set(SCL, 0);
+	gpio_set(SDA, 0);
+	mdelay(5);
+}
+{% endhighlight %}
+
