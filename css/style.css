@@ -450,11 +450,13 @@ hr { display: none; }
 	list-style: none;
 }
 #desire {
-	font-family: Arial, serif;
-	color:#FFFFFF;
-	font-size: 12px;
+	font-family: 'monospace', Arial, serif;
+	color: #f8c2cb;
+	font-size: 14px;
+/*
 	text-shadow:#339900 0px 1px 3px,#339900 1px 0px 3px,#339900 0px -1px 3px,#339900 -1px 0px 3px;
 	filter:glow(color=#339900,strength=3)
+*/
 }
 #sidebar li ul {
 	margin: 0px 14px;
