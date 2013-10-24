@@ -450,9 +450,9 @@ hr { display: none; }
 	list-style: none;
 }
 #desire {
-	font-family: 'monospace', Arial, serif;
-	color: #f8c2cb;
-	font-size: 14px;
+	font-family: Arial, serif;
+	color: #808080;
+	font-size: 12px;
 /*
 	text-shadow:#339900 0px 1px 3px,#339900 1px 0px 3px,#339900 0px -1px 3px,#339900 -1px 0px 3px;
 	filter:glow(color=#339900,strength=3)
