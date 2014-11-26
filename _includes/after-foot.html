@@ -1,7 +1,7 @@
 <!--  除了javascript 能其作用，其他的都没有其左右   -->
 {% unless page.title == '全部文章' %}
-	<script src="/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
-	{% include link-js.html %}
+    <script src="/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+    {% include link-js.html %}
 {% endunless %}
 
 <!-- Google Analytics -->
@@ -10,11 +10,11 @@
 <!--  加载disqus评论系统，但是已经加载了多说评论系统  -->
 <!--
 {% if page.comment %}
-	{% include disqus.html %}
+    {% include disqus.html %}
 {% endif %}
 -->
 
 {% if page.title == '分类标签' %}
-	{% include tag-js.html %}
-	{% include show-tag.html %}
+    {% include tag-js.html %}
+    {% include show-tag.html %}
 {% endif %}

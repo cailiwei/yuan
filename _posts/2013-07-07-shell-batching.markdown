@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [技术, linux, shell]
+tags: [技术, 杂类]
 comment: true
 title: 一句话命令批量处理文本
 ---
@@ -74,11 +74,11 @@ sed -i '/echo \"2\";/a\echo \"3\";' test.sh
 比如：在1.txt里有以下内容：
 
     HELLO=1
-	NI=2
-	WORLD=3
-	I Love China.
-	Love all
-	....
+    NI=2
+    WORLD=3
+    I Love China.
+    Love all
+    ....
 
 如果是要删除第三行：
 {% highlight bash %}

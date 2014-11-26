@@ -1,83 +1,84 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>Levy's station</title>
-		<meta name="keywords" content="" />
-		<meta name="description" content="" />
-		<meta name="author" content="{{ site.author.fullname }}" />
-		<link href="atom.xml" rel="alternate" title="Atom" type="application/atom+xml" />
-		<link href="rss.xml" rel="alternate" title="RSS" type="application/rss+xml" />
-		<link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Levy's station</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="author" content="{{ site.author.fullname }}" />
+        <link href="atom.xml" rel="alternate" title="Atom" type="application/atom+xml" />
+        <link href="rss.xml" rel="alternate" title="RSS" type="application/rss+xml" />
+        <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
 
-		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/style.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/style.css" media="screen" />
 
-		<link rel="stylesheet" href="{{ site.baseurl }}/css/pygments.css">
-		<script src="/js/scrolltop.js" type="text/javascript" charset="utf-8"></script>
-		{% unless page.title %}
-		{% include redirect-url.html %}
-		{% endunless %}
-	</head>
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/pygments.css">
+        <script src="/js/scrolltop.js" type="text/javascript" charset="utf-8"></script>
+        {% unless page.title %}
+        {% include redirect-url.html %}
+        {% endunless %}
+    </head>
 
-	<body>
-		<div id="logo">
-			<h1><a href="{{ site.baseurl }}" title="Levy's station">Levy's Station</a></h1>
-			<p>When people you care about is very happy, do not forget to look for their own happiness!~</p>
-		</div>
-		<!--<hr /> 产生一条水平线-->
-		<!-- end #logo -->
+    <body>
+        <div id="logo">
+            <h1><a href="{{ site.baseurl }}" title="Levy's station">Levy's Station</a></h1>
+            <p>When people you care about is very happy, do not forget to look for their own happiness!~</p>
+        </div>
+        <!--<hr /> 产生一条水平线-->
+        <!-- end #logo -->
 
-		<div id="header">
-			<div id="menu">
-				<ul>
-					<li><a href="{{ site.baseurl }}" class="first">首页</a></li>
-					<li class="current_page_item"><a href="{{ site.baseurl }}/archives">博客屋</a></li>
-					<li><a href="http://www.cailiwei.com.cn/#">明信片</a></li>
-					<li><a href="{{ site.baseurl }}/article">收藏夹</a></li>
-					<li><a href="{{ site.baseurl }}/feedback">留言集</a></li>
-					<li><a href="http://www.cailiwei.com.cn">关于我</a></li>
-				</ul>
-			</div>
-			<!-- end #menu -->
+        <div id="header">
+            <div id="menu">
+                <ul>
+                    <li><a href="{{ site.baseurl }}" class="first">首页</a></li>
+                    <li class="current_page_item"><a href="{{ site.baseurl }}/archives">博客屋</a></li>
+                    <li><a href="http://www.cailiwei.com.cn/#">明信片</a></li>
+                    <li><a href="{{ site.baseurl }}/article">收藏夹</a></li>
+                    <li><a href="{{ site.baseurl }}/feedback">留言集</a></li>
+                    <li><a href="http://www.cailiwei.com.cn">关于我</a></li>
+                </ul>
+            </div>
+            <!-- end #menu -->
 
-			<div id="search">
-				<form action="http://www.google.com/cse" id="cse-search-box">
-					<fieldset>
-						<input type="hidden" name="cx" value="006841049082201444164:nmgo8yuo6tk">
-						<input type="hidden" name="ie" value="UTF-8">
-						<input type="text" name="q" id="search-text" size="15">
-						<input type="submit" id="search-submit" value="搜索">
-					</fieldset>
-				</form>
-				<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
-			</div>
-			<!-- end #search -->
-		</div>
-		<!-- end #header -->
+            <div id="search">
+                <form action="http://www.google.com/cse" id="cse-search-box">
+                    <fieldset>
+                        <input type="hidden" name="cx" value="006841049082201444164:nmgo8yuo6tk">
+                        <input type="hidden" name="ie" value="UTF-8">
+                        <input type="text" name="q" id="search-text" size="15">
+                        <input type="submit" id="search-submit" value="搜索">
+                    </fieldset>
+                </form>
+                <script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en">
+                </script>
+            </div>
+            <!-- end #search -->
+        </div>
+        <!-- end #header -->
 
-		<div id="page">
-			{{ content }}
+        <div id="page">
+            {{ content }}
 
-			<!--返回顶部按钮-->
-			<div id="goTopBtn" style="display:none" title="返回顶部">
-				<a href="javascript:"><img style="border:none" class="topBtn" title="返回顶部" src="{{ site.baseurl }}/images/go2top.png" alt="go2top"/></a>
-			</div>
-			<script type="text/javascript">goTopEx();</script>
-			<!--返回顶部按钮end-->
+            <!--返回顶部按钮-->
+            <div id="goTopBtn" style="display:none" title="返回顶部">
+                <a href="javascript:"><img style="border:none" class="topBtn" title="返回顶部" src="{{ site.baseurl }}/images/go2top.png" alt="go2top"/></a>
+            </div>
+            <script type="text/javascript">goTopEx();</script>
+            <!--返回顶部按钮end-->
 
-			<div style="clear: both;">&nbsp;</div>
-		</div>
-		<!-- end #page -->
+            <div style="clear: both;">&nbsp;</div>
+        </div>
+        <!-- end #page -->
 
-		{% include footer.html %}
+        {% include footer.html %}
 
-		{% for js in page.js %}
-		<script src="{{ site.baseurl }}{{ js }}" type="text/javascript" charset="utf-8"></script>
-		{% endfor %}
-		{% for js in site.js %}
-		<script src="{{ site.baseurl }}{{ js }}" type="text/javascript" charset="utf-8"></script>
-		{% endfor %}
-		{% include after-foot.html %}
-		
-	</body>
+        {% for js in page.js %}
+        <script src="{{ site.baseurl }}{{ js }}" type="text/javascript" charset="utf-8"></script>
+        {% endfor %}
+        {% for js in site.js %}
+        <script src="{{ site.baseurl }}{{ js }}" type="text/javascript" charset="utf-8"></script>
+        {% endfor %}
+        {% include after-foot.html %}
+
+    </body>
 </html>

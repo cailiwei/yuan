@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "碎纸片中的我的大学"
-tags: [散文, 大学, 青春]
+tags: [生活, 大学, 日记]
 comment: true
 description:
 date: 2012-08-04

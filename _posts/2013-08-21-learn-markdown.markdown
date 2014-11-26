@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Markdown语法学习"
-tags: [markdown, 技术]
+tags: [杂类, 技术]
 comment: true
 date: 2013-08-21 23:28
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "获取uboot(lk)的log信息"
-tags: [技术]
+tags: [技术, 杂类]
 comment: true
 date: 2013-10-20 20:01
 ---
@@ -14,12 +14,12 @@ date: 2013-10-20 20:01
 
 {% highlight bash %}
 if [ -z $1 ] ; then
-	dd if=\\\\\.\\PhysicalDrive1 of=MISC bs=512 skip=165888  count=2048
-	echo "MISC OK"
+    dd if=\\\\\.\\PhysicalDrive1 of=MISC bs=512 skip=165888  count=2048
+    echo "MISC OK"
 else if [ $1 == "MISC" ] ; then
-	dd if=\\\\\.\\PhysicalDrive1 of=MISC bs=512 skip=165888  count=2048
-	echo "fetch MISC OK"
-	fi
+    dd if=\\\\\.\\PhysicalDrive1 of=MISC bs=512 skip=165888  count=2048
+    echo "fetch MISC OK"
+    fi
 fi
 {% endhighlight %}
 

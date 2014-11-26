@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GPIO模拟I2C的设计"
-tags: [Linux, 技术]
+tags: [杂类, 技术]
 comment: true
 date: 2013-10-17 23:19
 ---

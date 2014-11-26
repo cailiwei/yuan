@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "一段批量adb push文件脚本"
-tags: [技术]
+tags: [技术, 杂类]
 comment: true
 date: 2013-10-20 20:20
 ---

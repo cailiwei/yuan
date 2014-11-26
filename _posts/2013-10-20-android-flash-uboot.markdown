@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Android的Uboot(lk)的烧写命令"
-tags: [技术]
+tags: [技术, 杂类]
 comment: true
 date: 2013-10-20 19:30
 ---

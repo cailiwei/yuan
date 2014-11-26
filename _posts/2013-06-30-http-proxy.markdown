@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "网络代理设置方法总结"
-tags: [技术, linux, 网络, shell]
+tags: [技术, 杂类]
 comment: true
 date: 2013-06-30
 ---

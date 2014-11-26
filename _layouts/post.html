@@ -3,64 +3,66 @@ layout: page
 ---
 
 <div class="content">
-	<div class="post">
-		<h2 class="title">{{ page.title }}</h2>
-		<ul class="meta">
-			{% if page.tags != empty %}
-			分类：
-			{% for tag in page.tags %}
-			<span style="display:inline"><a href="{{ site.baseurl }}/tags/?tag={{tag | cgi}}">{{ tag }}</a>{% if forloop.last == false %}, {%endif %}&nbsp;</span>
-			{% endfor %}
-			{% endif %}
-			<span style="display:inline;" title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}"> 
-				&nbsp;&nbsp;时间：{{ page.date | date: '%B %d, %Y' }}</span>
-		</ul>
+    <div class="post">
+        <h2 class="title">{{ page.title }}</h2>
+        <ul class="meta">
+            {% if page.tags != empty %}
+            分类：
+            {% for tag in page.tags %}
+            <span style="display:inline"><a href="{{ site.baseurl }}/tags/?tag={{tag | cgi}}">{{ tag }}</a>{% if forloop.last == false %}, {%endif %}&nbsp;</span>
+            {% endfor %}
+            {% endif %}
+            <span style="display:inline;" title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}"> 
+                &nbsp;&nbsp;时间：{{ page.date | date: '%B %d, %Y' }}</span>
+        </ul>
 
-		<div id="entry">
-			{{ content }}	
-		</div>
+        <div id="entry">
+            {{ content }}   
+        </div>
 
-		<div class="links">
-			<span><a href="{{site.baseurl}}">返回主页</a></span>
-		</div>
-	</div>
+        <div class="links">
+            <span><a href="{{site.baseurl}}">返回主页</a></span>
+        </div>
+    </div>
 
-	<div class="page-navigation">
-		{% if page.previous.url %}
-		<a style="text-align:left" href="{{ site.baseurl }}{{page.previous.url}}" title="前一篇：{{page.previous.title}}">&laquo; {{page.previous.title}}</a>
-		{% endif %}	
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="{{ site.baseurl }}/archives/"> 文章列表</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		{% if page.next.url %}
-		<a style="text-align:right" href="{{ site.baseurl }}{{page.next.url}}" title="后一篇：{{page.next.title}}">{{page.next.title}} &raquo;</a>
-		{% endif %}
-	</div>
+    <div class="page-navigation">
+        {% if page.previous.url %}
+        <a style="text-align:left" href="{{ site.baseurl }}{{page.previous.url}}" title="前一篇：{{page.previous.title}}">&laquo; {{page.previous.title}}</a>
+        {% endif %} 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{{ site.baseurl }}/archives/"> 文章列表</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {% if page.next.url %}
+        <a style="text-align:right" href="{{ site.baseurl }}{{page.next.url}}" title="后一篇：{{page.next.title}}">{{page.next.title}} &raquo;</a>
+        {% endif %}
+    </div>
 
-	<!-- Baidu Button BEGIN -->
-	<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=right&amp;uid=815721" ></script>
-	<script type="text/javascript" id="bdshell_js"></script>
-	<script type="text/javascript">
-		document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
-	</script>
-	<!-- Baidu Button END -->
+    <!-- Baidu Button BEGIN -->
+    <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=right&amp;uid=815721" >
+    </script>
+    <script type="text/javascript" id="bdshell_js">
+    </script>
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+    </script>
+    <!-- Baidu Button END -->
 
-	{% if page.comment %}
-	<div class="comments" id="comments">
-		<!-- Duoshuo Comment BEGIN -->
-		<div class="ds-thread"></div>
-		<script type="text/javascript">
-		var duoshuoQuery = {short_name:"levy"};
-		(function() {
- 			var ds = document.createElement('script');
- 			ds.type = 'text/javascript';ds.async = true;
- 			ds.src = 'http://static.duoshuo.com/embed.js';
- 			ds.charset = 'UTF-8';
- 			(document.getElementsByTagName('head')[0] 
-  			|| document.getElementsByTagName('body')[0]).appendChild(ds);
- 		})();
-		</script>
-		<!-- Duoshuo Comment END -->
+    {% if page.comment %}
+    <div class="comments" id="comments">
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"levy"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+        <!-- Duoshuo Comment END -->
     </div>
     {% endif %}
 
