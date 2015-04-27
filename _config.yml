@@ -1,4 +1,4 @@
-site_title: "Levy's Station"
+site_title: "念愿驿站"
 site_subtitle: "自由分享,提高认知！"
 site_language: "zh-cn"
 
@@ -19,7 +19,7 @@ paginate_path: "blog/page:num"
 # 博客输出url格式
 permalink: /blog/:year/:month/:day/:title
 # /blog/2009/04/29/slap-chop/index.html
-# permalink: /:month-:day-:year/:title.html 
+# permalink: /:month-:day-:year/:title.html
 #            /04-29-2009/slap-chop.html
 
 # 代码高亮设置
