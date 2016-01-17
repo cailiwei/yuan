@@ -1,4 +1,4 @@
-site_title: "念愿驿站"
+site_title: "Levy's Home"
 site_subtitle: "自由分享,提高认知！"
 site_language: "zh-cn"
 
@@ -11,7 +11,7 @@ baseurl: http://blog.cailiwei.com.cn
 markdown: kramdown
 
 # how many items should be displayed per page.
-paginate: 5
+paginate: 6
 paginate_path: "blog/page:num"
 
 # < ----------- add by liwei.cai ------------------ >
