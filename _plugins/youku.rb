@@ -21,7 +21,7 @@ class YouKu < Liquid::Tag
         end
 
     def render(context)
-        # "<iframe height=498 width=510 src="http://player.youku.com/embed/XNTc2ODk1NjI0" frameborder=0 allowfullscreen></iframe>"
+        # "<iframe width=510 height=498 src="http://player.youku.com/embed/XNTc2ODk1NjI0" frameborder=0 allowfullscreen></iframe>"
         "<iframe width=\"#{@width}\" height=\"#{@height}\" src=\"http://player.youku.com/embed/#{@id}\" frameborder=0 allowfullscreen></iframe>"
     end
 

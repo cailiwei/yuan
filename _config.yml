@@ -28,6 +28,8 @@ pygments: true
 # 保持Jekyll运行，查看你的项目目录的改变并随时生成网站
 # auto: true
 
+gems: [youku, render_time]
+
 # jekyll 忽略被包含的文件和目录
 # exclude: "temp"
 

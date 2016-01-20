@@ -1,4 +1,6 @@
-
+serve/
 _site/
+build/
+clean/
 .*
 *~
