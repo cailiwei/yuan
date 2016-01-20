@@ -7,8 +7,6 @@ comment: true
 date: 2013-10-26 15:47
 ---
 
-{% youku XNTczMTAxNzA0 510 498 %}
-
 > 董小姐 你从没忘记你的微笑
 > 
 > 就算你和我一样 渴望着衰老
