@@ -5,7 +5,7 @@ comment: true
 title: 一句话命令批量处理文本
 ---
 
-###Linux Shell 批量重命名的方法
+### Linux Shell 批量重命名的方法
 
 1\. 删除所有的 .bak 后缀:
 {% highlight bash %}
@@ -52,7 +52,7 @@ for var in `ls`; do mv -f "$var" `echo "$var" |sed 's/^.../vzomik/'`; done
 for var in `ls`; do mv -f "$var" `echo "$var" |sed 's/....$/vzomik/'`; done
 {% endhighlight %}
 
-###用sed在文档中间指定行后增加一行
+### 用sed在文档中间指定行后增加一行
 
 有时候我们会用脚本，来修改文档，比如在文档中增加一行或减少一行
 
@@ -69,7 +69,7 @@ sed -i '/echo \"2\";/a\echo \"3\";' test.sh
 之所以用分号，是因为文本中本来就有。也就是说分号不是必须的！抽象出来就是：
     sed -i '/* /a*' filename
 
-###Linux shell脚本 删除文件中的一行内容
+### Linux shell脚本 删除文件中的一行内容
 
 比如：在1.txt里有以下内容：
 
