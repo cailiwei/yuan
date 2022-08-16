@@ -17,20 +17,20 @@ date: 2013-06-30
 
   打开环境配置文件：`$ vi /etc/environment`
   需要注意的是要相应地替换掉代理用户名和密码，如果不需要就不需要填写
-  用户名：liwei.cai 密码：CLW712mm（下面几种配置代理，此处相同，不再累述）。
+  用户名：liwei.cai 密码：XXXXXX（下面几种配置代理，此处相同，不再累述）。
 {% highlight bash %}
-export http_proxy=http://liwei.cai:CLW712mm@172.16.100.47:8080
-export ftp_proxy=ftp://liwei.cai:CLW712mm@172.16.100.47:8080
-export https_proxy=https://liwei.cai:CLW712mm@172.16.100.47:8080
+export http_proxy=http://liwei.cai:XXXXXX@172.16.100.47:8080
+export ftp_proxy=ftp://liwei.cai:XXXXXX@172.16.100.47:8080
+export https_proxy=https://liwei.cai:XXXXXX@172.16.100.47:8080
 {% endhighlight %}
 
 ## apt-get代理设置
 
   打开apt-get的配置文件：`vi /etc/apt/apt.conf`  
 {% highlight bash %}
-Acquire::http::proxy "http://liwei.cai:CLW712mm@172.16.100.47:8080/";
-Acquire::ftp::proxy "ftp://liwei.cai:CLW712mm@172.16.100.47:8080/";
-Acquire::https::proxy "https://liwei.cai:CLW712mm@172.16.100.47:8080/";
+Acquire::http::proxy "http://liwei.cai:XXXXXX@172.16.100.47:8080/";
+Acquire::ftp::proxy "ftp://liwei.cai:XXXXXX@172.16.100.47:8080/";
+Acquire::https::proxy "https://liwei.cai:XXXXXX@172.16.100.47:8080/";
 {% endhighlight %}
   执行完之后，运行：`sudo apt-get update` 查看是否可以更新源。  
     
@@ -43,7 +43,7 @@ Acquire::https::proxy "https://liwei.cai:CLW712mm@172.16.100.47:8080/";
 #!/bin/bash
 PROXY=172.16.100.47
 PROXYPORT=8080
-PROXYAUTH=liwei.cai:CLW712mm
+PROXYAUTH=liwei.cai:XXXXXX
 exec socat STDIO PROXY:$PROXY:$1:$2,proxyport=$PROXYPORT,proxyauth=$PROXYAUTH
 {% endhighlight %}
 
